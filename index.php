@@ -151,7 +151,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					</div>
 				</div>
 				<div class="container-fluid bottom-margin">
-					
+					<div class="row">
+						<div class="col-sm-3">
+							<h4>REPORT TYPE:</h4>
+						</div>
+						<div class="col-sm-3">
+							<h5>AMC REPORT '.$amc_check_report.'</h5>
+						</div>
+						<div class="col-sm-3">
+							<h5>SERVICE REPORT '.$service_check_report.'</h5>
+						</div>
+						<div class="col-sm-3">
+							<div class="row">
+								<div class="col-sm-4">
+									<h5>SL.NO.</h5>
+								</div>
+								<div class="col-sm-8">
+									<h5>'.$serial_number.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="container-fluid bottom-margin">
 					<div class="row">
