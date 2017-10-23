@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="">
-    <title>LOANMAMU</title>
+    <title>VENUS GENIE CARE SERVICES</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.html">
     <!-- <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">  -->
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/cosmos.min.css">
     <link rel="stylesheet" href="css/application.min.css">
   </head>
-  <body class="authentication-body" style="background:url(img/about_3.jpg) no-repeat; background-size:cover; ">
+  <body class="authentication-body" style="background:url(img/services.jpg) no-repeat; background-size:cover; ">
     <div class="container-fluid">
       <div class="authentication-header m-b-30">
         <div class="clearfix">

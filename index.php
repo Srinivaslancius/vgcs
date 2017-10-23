@@ -216,7 +216,7 @@ if ($msgerror) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Table</title>
+  <title>VENUS GENIE CARE SERVICES</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Latest compiled and minified CSS -->
