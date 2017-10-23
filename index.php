@@ -15,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-    if ($_POST['amc_check_report'] == "" || $_POST['service_check_report'] == "" || $_POST['serial_number'] == "" || $_POST['customer_name'] == "" || $_POST['date1'] == "" || $_POST['contact_person_name'] == "" || $_POST['mobile'] == "" || $_POST['commissioning_visit'] == "" || $_POST['paidvisit'] == "" ||  $_POST['break_down_visit'] == "" || $_POST['amcvisit'] == ""|| $_POST['eng_id'] == "" || $_POST['alt_model'] == "" || $_POST['rating_kva'] == "" || $_POST['eng_id1'] == "" || $_POST['alt_modal_1'] == "" || $_POST['rating_kva_1'] == "" || $_POST['eng_id2'] == "" || $_POST['alt_modal_2'] == "" || $_POST['rating_kva_2'] == "" || $_POST['date_of_informed'] == "" || $_POST['date_of_visit'] == "" || $_POST['location'] == "" || $_POST['check12'] == "" || $_POST['check13'] == "" || $_POST['water_temp'] == "" || $_POST['fuel_pressure'] == "" || $_POST['oil_pressure'] == "" || $_POST['battery_chg'] == "" || $_POST['speed_freq'] == "" || $_POST['load_km'] == "" || $_POST['load_amps'] == "" || $_POST['voltage'] == "" || $_POST['check21'] == "" || $_POST['check22'] == "" || $_POST['check23'] == "" || $_POST['check24'] == "" || $_POST['check25'] == "" || $_POST['check26'] == "" || $_POST['check27'] == "" || $_POST['check28'] == "" || $_POST['check29'] == "" || $_POST['check30'] == "" || $_POST['check31'] == "" || $_POST['check32'] == "" || $_POST['amc_visit_check_list'] == "" || $_POST['failure_datails'] == "" || $_POST['cause_of_failure'] == "" || $_POST['work_carried_out'] == "" || $_POST['customer_comments'] == "" || $_POST['incharge_sign'] == "" || $_POST['service_eng_sign'] == "") {
+   // if ($_POST['amc_check_report'] == "" || $_POST['service_check_report'] == "" || $_POST['serial_number'] == "" || $_POST['customer_name'] == "" || $_POST['date1'] == "" || $_POST['contact_person_name'] == "" || $_POST['mobile'] == "" || $_POST['commissioning_visit'] == "" || $_POST['paidvisit'] == "" ||  $_POST['break_down_visit'] == "" || $_POST['amcvisit'] == ""|| $_POST['eng_id'] == "" || $_POST['alt_model'] == "" || $_POST['rating_kva'] == "" || $_POST['eng_id1'] == "" || $_POST['alt_modal_1'] == "" || $_POST['rating_kva_1'] == "" || $_POST['eng_id2'] == "" || $_POST['alt_modal_2'] == "" || $_POST['rating_kva_2'] == "" || $_POST['date_of_informed'] == "" || $_POST['date_of_visit'] == "" || $_POST['location'] == "" || $_POST['check12'] == "" || $_POST['check13'] == "" || $_POST['water_temp'] == "" || $_POST['fuel_pressure'] == "" || $_POST['oil_pressure'] == "" || $_POST['battery_chg'] == "" || $_POST['speed_freq'] == "" || $_POST['load_km'] == "" || $_POST['load_amps'] == "" || $_POST['voltage'] == "" || $_POST['check21'] == "" || $_POST['check22'] == "" || $_POST['check23'] == "" || $_POST['check24'] == "" || $_POST['check25'] == "" || $_POST['check26'] == "" || $_POST['check27'] == "" || $_POST['check28'] == "" || $_POST['check29'] == "" || $_POST['check30'] == "" || $_POST['check31'] == "" || $_POST['check32'] == "" || $_POST['amc_visit_check_list'] == "" || $_POST['failure_datails'] == "" || $_POST['cause_of_failure'] == "" || $_POST['work_carried_out'] == "" || $_POST['customer_comments'] == "" || $_POST['incharge_sign'] == "" || $_POST['service_eng_sign'] == "") {
 
         $msgerror = 'Please Fill all field';
-    } else {
+    //} else {
 
         /**/
         $mailto = "harikanth@lanciussolutions.com";
@@ -133,11 +133,595 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         
 
-        $content .= 'Mail To :' . $mailto . ;
-        $content .= 'Mail From:' . $mailfrom . ;
-        $content .= 'SL.NO :' . $serial_number. ;
-        $content .= 'Date :' . $date1. ;
+        $content .= '<body>
+<div class="container">	<div class="row"><div class="col-sm-12">
+			<div class="border-div">
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3">
+							<center><h3>VGCS</h3></center>
+						</div>
+						<div class="col-sm-6">
+							<center><h3>VENUS GENIE CARE SERVICES</h3></center>
+						</div>
+						<div class="col-sm-3">
+							<h5>MOBILE: +91-98492575</h5>
+							<h5>E-mail: venugopal.7@hotmail.com</h5>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-9">
+							<div class="row">
+								<div class="col-sm-3">
+									<h5>Customer Name:</h5>
+								</div>
+								<div class="col-sm-9">
+									<h5>'.$customer_name.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="row">
+								<div class="col-sm-3">
+									<h5>Date:</h5>
+								</div>
+								<div class="col-sm-9">
+									<h5>'.$date1.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-9">
+							<div class="row">
+								<div class="col-sm-3">
+									<h5>Contact Person Name:</h5>
+								</div>
+								<div class="col-sm-9"> 
+									<h5>'.$contact_person_name.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="row">
+								<div class="col-sm-3">
+									<h5>Cell:</h5>
+								</div>
+								<div class="col-sm-9">
+									<h5>'.$mobile.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-2">
+							<h5>VISIT TYPE:</h5>
+						</div>
+						<div class="col-sm-3" style="border-left:1px solid black">
+							<div class="row">
+								<div class="col-sm-8">
+								<h5>Commissioning Visit</h5>
+								</div>
+								<div class="col-sm-4">
+								<h5>'.$commissioning_visit.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-2" style="border-left:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>PaidVisit</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$paidvisit.'</h5>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-3" style="border-left:1px solid black">
+							<div class="row">
+								<div class="col-sm-8">
+									<h5>Break Down Visit</h5>
+								</div>
+								<div class="col-sm-4">
+									<h5>'.$break_down_visit.'</h5>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-2" style="border-left:1px solid black ">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>AMCVisit</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$amcvisit.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>ENG/Eqp Id:</h5>
+								</div>
+								<div class="col-sm-6" >
+									<h5> '.$eng_id.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>ALT./MODEL:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$alt_model.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>RATING/KVA:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$rating_kva.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>ENG/Eqp Id:</h5>
+								</div>
+								<div class="col-sm-6" >
+									<h5>'.$eng_id1.' </h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>ALT./MODEL:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$alt_modal_1.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>RATING/KVA:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$rating_kva_1.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+								<h5>ENG/Eqp Id:</h5>
+								</div>
+								<div class="col-sm-6" >
+									<h5> '.$eng_id2.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>ALT./MODEL:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$alt_modal_2.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>RATING/KVA:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$rating_kva_2.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>DATE OF INFORMED:</h5>
+								</div>
+								<div class="col-sm-4">
+									<h5>'.$date_of_informed.'</h5>
+								</div>
+								<div class="col-sm-2">
+									<h5><span class="glyphicon glyphicon-time"></span></h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>DATE OF VISIT:</h5>
+								</div>
+								<div class="col-sm-4">
+									<h5>'.$date_of_visit.'</h5>
+								</div>
+								<div class="col-sm-2">
+									<h5><span class="glyphicon glyphicon-time"></span></h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>LOCATION:</h5>
+								</div>
+								<div class="col-sm-6"> 
+									<h5>'.$location.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-8">
+							<h4>AMC VISIT CHECK LIST '.$check12.'</h4>
+						</div>
+						<div class="col-sm-4">
+							<h4>SERVICE VISIT CHECK LIST '.$check13.'</h4>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Water Temp</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$water_temp.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Fuel Pressure</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$fuel_pressure.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Oil Pressure</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$oil_pressure.'</h5>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Battery chg</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$battery_chg.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+				
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Speed/Freq</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$speed_freq.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Load in kw</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$load_km.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Load in AMPS</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$load_amps.'</h5>
+								</div>
+							</div>
+						</div>
+					<div class="col-sm-3" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>Voltage</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5>'.$voltage.'</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check oil level / Condition</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check21.'
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check Radiator all Houses/Condition</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check22.'
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check Breather / Clean</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check23.'
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check Fuel / Condition</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check24.'
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check Drive Belts / Condition</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check25.'
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check Air Filters / Clean</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check26.'
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+					<div class="col-sm-4" style="border-right:1px solid black">
+						<div class="row">
+							<div class="col-sm-10">
+								<h5>Check Coolent / Condition</h5>
+							</div>
+							<div class="col-sm-2">
+								'.$check27.'
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4" style="border-right:1px solid black">
+						<div class="row">
+							<div class="col-sm-10">
+								<h5>Check if any / Leakages</h5>
+							</div>
+							<div class="col-sm-2">
+								'.$check28.'
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="row">
+							<div class="col-sm-10">
+								<h5>Check Valve Injector / Adjust</h5>
+							</div>
+							<div class="col-sm-2">
+								'.$check29.'
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Check battery / Condition</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check30.'
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Start Check Exhaust Smoke / Limits</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check31.'
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-10">
+									<h5>Start Check Abnormal Sounds/Observe</h5>
+								</div>
+								<div class="col-sm-2">
+									'.$check32.'
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-5">
+							<h4>AMC VISIT CHECK LIST Comments if any:</h4>
+						</div>
+						<div class="col-sm-7">
+							<h4>'.$amc_visit_check_list.'</h4>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3">
+							<h4>FAILURE DETAILS:</h4>
+						</div>
+						<div class="col-sm-9">
+							<h4>'.$failure_datails.'</h4>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3">
+							<h4>CAUSE OF FAILURE:</h4>
+						</div>
+						<div class="col-sm-9">
+							<h4>'.$cause_of_failure.'</h4>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3">
+							<h4>WORK CARRIED OUT:</h4>
+						</div>
+						<div class="col-sm-9">
+							<h4>'.$work_carried_out.'</h4>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-3">
+							<h4>CUSTOMER COMMENTS:</h4>
+						</div>
+						<div class="col-sm-9">
+							<h4>'.$customer_comments.'</h4>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin" style="border-bottom:0px">
+					<div class="row">
+						<div class="col-sm-8">
+							<h5>INCHARGE</h5>
+						</div>
+						<div class="col-sm-4">
+							<h5>SERVICE ENGINEER</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-3">
+									<h5>SIGNATURE</h5>
+								</div>
+								<div class="col-sm-9">
+									<h5>'.$incharge_sign.'</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-3">
+									<h5>SIGNATURE</h5>
+								</div>
+								<div class="col-sm-9">
+									<h5>'.$service_eng_sign.'</h5>
+								</div>
+							</div>
+						</div>						
+					</div>
+					
+				</div>
+			</div>
+		</div></div> </div></body>';
         
+
+        
+        echo $content; die;
 
         
 
@@ -201,7 +785,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         /**/
-    }
+    //}
 }
 ?>
 
@@ -237,7 +821,7 @@ if ($msgerror) {
 <div class="container">
 	
 	<div class="row">
-		<form  action="" method="post">
+		<form method="post">
 		<div class="col-sm-12">
 			<div class="border-div">
 				<div class="container-fluid bottom-margin">
@@ -840,7 +1424,7 @@ if ($msgerror) {
 					</div>
 					<div class="row" style="margin-bottom:10px">
 						<div class="col-sm-12">
-							<center><button type="button" name="submit" class="btn btn-primary active btn-lg">Submit</button></center>
+							<center><button type="submit" name="submit" class="btn btn-primary active btn-lg">Submit</button></center>
 						</div>
 					</div>
 				</div>
