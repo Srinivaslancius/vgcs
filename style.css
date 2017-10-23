@@ -1,0 +1,36 @@
+
+  body{
+   overflow-x: hidden;
+  }
+  .border-div{
+  border:2px solid black;
+  margin: 10px 0;
+  }
+   
+   .bottom-margin{
+  border-bottom: 1px solid black;
+  }
+  h3{
+  font-weight:bold;
+  color:#154360 !important;
+  }
+  h5{
+  font-size:15px;
+  font-weight:bold;
+  color:#4c4c4c !important;
+  }
+  h4{
+  font-weight:bold;
+  color:#154360 !important;
+  }
+  h6{
+  color:#b2b2b2;
+  }
+  .glyphicon-time{
+  font-size:20px;
+  margin-top:8px;
+  text-align:right;
+  }
+  .btn-lg{
+	  background-color:#154360 !important;
+  }
