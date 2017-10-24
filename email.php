@@ -715,6 +715,7 @@ body{
     if (mail($to, $subject, $body, $headers)) {
 
         $msgsuccess = 'Mail Send Successfully';
+        header('Location: thankyou.php');
     } else {
 
         $msgerror = 'Main not send';
