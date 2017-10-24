@@ -20,10 +20,10 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
@@ -36,11 +36,11 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 							<center><h3>VGCS</h3></center>
 						</div>
 						<div class="col-sm-6">
-							<center><h3>VENUS GENIE CARE SERVICES</h3></center>
+							<center><h3><?php echo $getSiteSettingsData['admin_title']; ?></h3></center>
 						</div>
 						<div class="col-sm-3">
-							<h5>MOBILE: +91-9849257587</h5>
-							<h5>E-mail: venugopal.7@hotmail.com</h5>
+							<h5>MOBILE: +91-<?php echo $getSiteSettingsData['mobile']; ?></h5>
+							<h5>E-mail: <?php echo $getSiteSettingsData['email']; ?></h5>
 						</div>
 					</div>
 				</div>
