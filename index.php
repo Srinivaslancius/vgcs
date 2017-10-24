@@ -13,7 +13,9 @@ $getSiteSettingsData  = $getData->fetch_assoc();
       $report_type = $_POST['report_type'];
       $sl_no = $_POST['sl_no'];
       $customer_name = $_POST['customer_name'];
-      $customer_date = $_POST['customer_date'];
+      //$customer_date = $_POST['customer_date'];
+      $date=date_create($_POST['customer_date']);
+      $customer_date = date_format($date,"Y/m/d");
       $contact_person_name = $_POST['contact_person_name'];                                 
       $contact_email = $_POST['contact_email'];
       $contact_mobile = $_POST['contact_mobile'];
@@ -61,7 +63,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 
   
                                                           
-            echo $sql = "INSERT INTO service_form (`report_type`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`) VALUES ('$report_type','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds')"; die;
+             $sql = "INSERT INTO service_form (`report_type`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`) VALUES ('$report_type','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds')"; 
 
 
       if($conn->query($sql) === TRUE){
@@ -503,7 +505,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Radiator all Houses/Condition</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_radiator_condition" >
+									<input type="checkbox" name="check_radiator_condition" value="<?php if($_POST['check_radiator_condition'] == "checked") { echo 1; } else { echo 0; } ?>">
 								</div>
 							</div>
 						</div>
@@ -513,7 +515,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Breather / Clean</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_breather_clean" >
+									<input type="checkbox" name="check_breather_clean" value="<?php if($_POST['check_breather_clean'] = "checked") {echo 1;} else { echo 0;} ?>">
 								</div>
 							</div>
 						</div>
@@ -527,7 +529,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Fuel / Condition</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_fuel_condition" >
+									<input type="checkbox" name="check_fuel_condition" value="<?php if($_POST['check_fuel_condition'] = "checked") {echo 1;} else { echo 0;} ?>">
 								</div>
 							</div>
 						</div>
@@ -537,7 +539,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Drive Belts / Condition</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_drive_belts_condition"  >
+									<input type="checkbox" name="check_drive_belts_condition" value="<?php if($_POST['check_drive_belts_condition'] = "checked") {echo 1;} else { echo 0;} ?>" >
 								</div>
 							</div>
 						</div>
@@ -547,7 +549,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Air Filters / Clean</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_air_filters_clean"  >
+									<input type="checkbox" name="check_air_filters_clean" value="<?php if($_POST['check_air_filters_clean'] = "checked") {echo 1;} else { echo 0;} ?>" >
 								</div>
 							</div>
 						</div>
@@ -562,7 +564,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 								<h5>Check Coolent / Condition</h5>
 							</div>
 							<div class="col-sm-2">
-								<input type="checkbox" name="check_coolent_condition" >
+								<input type="checkbox" name="check_coolent_condition" value="<?php if($_POST['check_coolent_condition'] = "checked") {echo 1;} else { echo 0;} ?>" >
 							</div>
 						</div>
 					</div>
@@ -572,7 +574,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 								<h5>Check if any / Leakages</h5>
 							</div>
 							<div class="col-sm-2">
-								<input type="checkbox" name="check_leakages" >
+								<input type="checkbox" name="check_leakages" value="<?php if($_POST['check_leakages'] = "checked") {echo 1;} else { echo 0;} ?>">
 							</div>
 						</div>
 					</div>
@@ -582,7 +584,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 								<h5>Check Valve Injector / Adjust</h5>
 							</div>
 							<div class="col-sm-2">
-								<input type="checkbox" name="check_valve_injector"  >
+								<input type="checkbox" name="check_valve_injector"  value="<?php if($_POST['check_valve_injector'] = "checked") {echo 1;} else { echo 0;} ?>">
 							</div>
 						</div>
 					</div>
@@ -596,7 +598,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Battery / Condition</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_battery_condition" >
+									<input type="checkbox" name="check_battery_condition" value="<?php if($_POST['check_battery_condition'] = "checked") {echo 1;} else { echo 0;} ?>">
 								</div>
 							</div>
 						</div>
@@ -607,7 +609,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Start Check Exhaust Smoke / Limits</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="start_check_exhaust_smoke" >
+									<input type="checkbox" name="start_check_exhaust_smoke" value="<?php if($_POST['start_check_exhaust_smoke'] = "checked") {echo 1;} else { echo 0;} ?>">
 								</div>
 							</div>
 						</div>
@@ -618,7 +620,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Start Check Abnormal Sounds/Observe</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="start_check_abnormal_sounds" >
+									<input type="checkbox" name="start_check_abnormal_sounds" value="<?php if($_POST['start_check_abnormal_sounds'] = "checked") {echo 1;} else { echo 0;} ?>">
 								</div>
 							</div>
 						</div>
