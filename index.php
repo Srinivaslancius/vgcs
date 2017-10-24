@@ -14,8 +14,8 @@ $getSiteSettingsData  = $getData->fetch_assoc();
       $sl_no = $_POST['sl_no'];
       $customer_name = $_POST['customer_name'];
       //$customer_date = $_POST['customer_date'];
-      $date=date_create($_POST['customer_date']);
-      $customer_date = date_format($date,"m/d/y");
+      //$date=date_create($_POST['customer_date']);
+      $customer_date = date_format($_POST['customer_date'],"Y-m-d");
       $contact_person_name = $_POST['contact_person_name'];                                 
       $contact_email = $_POST['contact_email'];
       $contact_mobile = $_POST['contact_mobile'];
@@ -57,11 +57,8 @@ $getSiteSettingsData  = $getData->fetch_assoc();
       $check_battery_condition = $_POST['check_battery_condition'];
       $start_check_exhaust_smoke = $_POST['start_check_exhaust_smoke'];
       $start_check_abnormal_sounds = $_POST['start_check_abnormal_sounds'];
-
-
-
-
   
+
                                                           
              $sql = "INSERT INTO service_form (`report_type`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`) VALUES ('$report_type','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds')"; 
 
