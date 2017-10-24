@@ -39,7 +39,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 							<center><h3>VENUS GENIE CARE SERVICES</h3></center>
 						</div>
 						<div class="col-sm-3">
-							<h5>MOBILE: +91-98492575</h5>
+							<h5>MOBILE: +91-9849257587</h5>
 							<h5>E-mail: venugopal.7@hotmail.com</h5>
 						</div>
 					</div>
@@ -50,10 +50,10 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 							<h4>REPORT TYPE:</h4>
 						</div>
 						<div class="col-sm-3">
-							<h5>AMC REPORT <input type="checkbox"></h5>
+							<h5>AMC REPORT <input type="radio"></h5>
 						</div>
 						<div class="col-sm-3">
-							<h5>SERVICE REPORT <input type="checkbox"></h5>
+							<h5>SERVICE REPORT <input type="radio"></h5>
 						</div>
 						<div class="col-sm-3">
 							<div class="row">
@@ -69,15 +69,17 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 				</div>
 				<div class="container-fluid bottom-margin">
 					<div class="row">
-						<div class="col-sm-9">
+						<div class="col-sm-5">
 							<div class="row">
-								<div class="col-sm-3">
+								<div class="col-sm-5">
 									<h5>Customer Name:</h5>
 								</div>
-								<div class="col-sm-9">
+								<div class="col-sm-7">
 									<h5><input type="text" class="form-control"></h5>
 								</div>
 							</div>
+						</div>
+						<div class="col-sm-4">
 						</div>
 						<div class="col-sm-3">
 							<div class="row">
@@ -93,13 +95,23 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 				</div>
 				<div class="container-fluid bottom-margin">
 					<div class="row">
-						<div class="col-sm-9">
+						<div class="col-sm-5">
 							<div class="row">
-								<div class="col-sm-3">
+								<div class="col-sm-5">
 									<h5>Contact Person Name:</h5>
 								</div>
-								<div class="col-sm-9"> 
+								<div class="col-sm-7"> 
 									<h5><input type="text" class="form-control"></h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-5">
+									<h5>Contact Email:</h5>
+								</div>
+								<div class="col-sm-7"> 
+									<h5><input type="email" class="form-control" placeholder="E-mail id"></h5>
 								</div>
 							</div>
 						</div>
@@ -126,17 +138,17 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 								<h5>Commissioning Visit</h5>
 								</div>
 								<div class="col-sm-4">
-								<h5><input class="form-control" type="text"></h5>
+								<h5><input type="radio"></h5>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-2" style="border-left:1px solid black">
 							<div class="row">
-								<div class="col-sm-6">
-									<h5>PaidVisit</h5>
+								<div class="col-sm-8">
+									<h5>Paid Visit</h5>
 								</div>
-								<div class="col-sm-6">
-									<h5><input type="text" class="form-control"></h5>
+								<div class="col-sm-4">
+									<h5><input type="radio"></h5>
 								</div>
 							</div>
 						</div>
@@ -147,52 +159,18 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Break Down Visit</h5>
 								</div>
 								<div class="col-sm-4">
-									<h5><input type="text" class="form-control"></h5>
+									<h5><input type="radio"></h5>
 								</div>
 							</div>
 						</div>
 						
 						<div class="col-sm-2" style="border-left:1px solid black ">
 							<div class="row">
-								<div class="col-sm-6">
-									<h5>AMCVisit</h5>
+								<div class="col-sm-8">
+									<h5>AMC Visit</h5>
 								</div>
-								<div class="col-sm-6">
-									<h5><input type="text" class="form-control"></h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="container-fluid bottom-margin">
-					<div class="row">
-						<div class="col-sm-4" style="border-right:1px solid black">
-							<div class="row">
-								<div class="col-sm-6">
-									<h5>ENG/Eqp Id:</h5>
-								</div>
-								<div class="col-sm-6" >
-									<h5> <input type="text" class="form-control"></h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4" style="border-right:1px solid black">
-							<div class="row">
-								<div class="col-sm-6">
-									<h5>ALT./MODEL:</h5>
-								</div>
-								<div class="col-sm-6">
-									<h5><input type="text" class="form-control"></h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="row">
-								<div class="col-sm-6">
-									<h5>RATING/KVA:</h5>
-								</div>
-								<div class="col-sm-6">
-									<h5><input type="text" class="form-control"></h5>
+								<div class="col-sm-4">
+									<h5><input type="radio"></h5>
 								</div>
 							</div>
 						</div>
@@ -237,7 +215,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-4" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
-								<h5>ENG/Eqp Id:</h5>
+									<h5>ENG/SI.No:</h5>
 								</div>
 								<div class="col-sm-6" >
 									<h5> <input type="text" class="form-control"></h5>
@@ -247,7 +225,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-4" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
-									<h5>ALT./MODEL:</h5>
+									<h5>ALT./SI.No:</h5>
 								</div>
 								<div class="col-sm-6">
 									<h5><input type="text" class="form-control"></h5>
@@ -257,7 +235,41 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-4">
 							<div class="row">
 								<div class="col-sm-6">
-									<h5>RATING/KVA:</h5>
+									<h5>PANNEL/TYPE:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5><input type="text" class="form-control"></h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid bottom-margin">
+					<div class="row">
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+								<h5>PM/DATE:</h5>
+								</div>
+								<div class="col-sm-6" >
+									<h5> <input type="text" class="form-control"></h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4" style="border-right:1px solid black">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>PM/TYPE:</h5>
+								</div>
+								<div class="col-sm-6">
+									<h5><input type="text" class="form-control"></h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>RUN/HRS:</h5>
 								</div>
 								<div class="col-sm-6">
 									<h5><input type="text" class="form-control"></h5>
@@ -309,10 +321,10 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 				<div class="container-fluid bottom-margin">
 					<div class="row">
 						<div class="col-sm-8">
-							<h4>AMC VISIT CHECK LIST <input type="checkbox"></h4>
+							<h4>AMC VISIT CHECK LIST <input type="radio"></h4>
 						</div>
 						<div class="col-sm-4">
-							<h4>SERVICE VISIT CHECK LIST <input type="checkbox"></h4>
+							<h4>SERVICE VISIT CHECK LIST <input type="radio"></h4>
 						</div>
 					</div>
 				</div>
@@ -411,7 +423,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-4" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-10">
-									<h5>Check oil level / Condition</h5>
+									<h5>Check Oil level / Condition</h5>
 								</div>
 								<div class="col-sm-2">
 									<input type="checkbox">
@@ -514,7 +526,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-4" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-10">
-									<h5>Check battery / Condition</h5>
+									<h5>Check Battery / Condition</h5>
 								</div>
 								<div class="col-sm-2">
 									<input type="checkbox">
@@ -606,26 +618,12 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<div class="row">
-								<div class="col-sm-3">
-									<h5>SIGNATURE</h5>
-								</div>
-								<div class="col-sm-9">
-									<h5><input type="text" class="form-control"></h5>
-								</div>
-							</div>
+							<h5>SIGNATURE</h5>
 						</div>
 						<div class="col-sm-4">
 						</div>
 						<div class="col-sm-4">
-							<div class="row">
-								<div class="col-sm-3">
-									<h5>SIGNATURE</h5>
-								</div>
-								<div class="col-sm-9">
-									<h5><input type="text" class="form-control"></h5>
-								</div>
-							</div>
+						<h5>SIGNATURE</h5>
 						</div>						
 					</div>
 					<div class="row" style="margin-bottom:10px">

@@ -36,7 +36,7 @@
               <div class="widget widget-tile-2 bg-danger m-b-30">
                 <div class="wt-content p-a-20 p-b-50">
                   <div class="wt-title">Services</div>
-                  <div class="wt-number"><?php echo getRowsCount('services')?></div>
+                  <div class="wt-number">0</div>
                 </div>
                 <div class="wt-icon">
                   <i class="zmdi zmdi-wrench zmdi-hc-fw"></i>
