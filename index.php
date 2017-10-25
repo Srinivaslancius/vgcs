@@ -427,7 +427,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Oil level / Condition</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_oil_level_condition"  >
+									<input type="checkbox" name="check_oil_level_condition" value="<?php if($_POST['check_oil_level_condition'] == "checked") { echo 1; } else { echo 0; } ?>" >
 								</div>
 							</div>
 						</div>
