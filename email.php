@@ -54,7 +54,16 @@ include "manage_webmaster/admin_includes/config.php";
       $sql = "INSERT INTO service_form (`report_type`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`) VALUES ('$report_type','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds')"; 
 
     $conn->query($sql);
-//Send email with pdf attachement
+
+        if((int)$check_fuel_condition == 1 ) {
+          //echo "success";
+           $checked = "checked";
+           echo $checked; 
+        }else{
+          echo "false";
+        }
+      
+    
 $content = '';
 $content .= '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -142,7 +151,7 @@ body{
                                     <h5>SL.NO.</h5>
                                 </div>
                                 <div class="col-sm-8">
-                                    <h5><input type="text" class="form-control" value="1234567895" readonly></h5>
+                                    <h5><input type="text" class="form-control" value="'.$sl_no.'" readonly></h5>
                                 </div>
                             </div>
                         </div>
@@ -508,7 +517,7 @@ body{
                                     <h5>Check Oil level / Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="'.$checked.'">
                                 </div>
                             </div>
                         </div>
@@ -518,7 +527,7 @@ body{
                                     <h5>Check Radiator all Houses/Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="'.$checked.'">
                                 </div>
                             </div>
                         </div>
@@ -528,7 +537,7 @@ body{
                                     <h5>Check Breather / Clean</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="'.$checked.'">
                                 </div>
                             </div>
                         </div>
@@ -542,7 +551,7 @@ body{
                                     <h5>Check Fuel / Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="'.$checked.'">
                                 </div>
                             </div>
                         </div>
