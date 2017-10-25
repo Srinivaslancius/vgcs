@@ -207,63 +207,56 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Oil level/Condition:</div>
-                              <div class="col-sm-6"><?php echo $row['check_oil_level_condition'];?></div>
+                              <div class="col-sm-4">VISIT CHECK LIST:</div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Radiator all Houses/Condition:</div>
-                              <div class="col-sm-6"><?php echo $row['check_radiator_condition'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_oil_level_condition'] == 1) echo 'Check Oil level/Condition';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Breather/Clean:</div>
-                              <div class="col-sm-6"><?php echo $row['check_breather_clean'];?></div>
+                              <div class="col-sm-2"></div>
+                              <div class="col-sm-4"><?php if($row['check_radiator_condition'] == 1) echo 'Check Radiator all Houses/Condition';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Fuel/Condition:</div>
-                              <div class="col-sm-6"><?php echo $row['check_fuel_condition'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_breather_clean'] == 1) echo 'Check Breather/Clean';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Drive Belts/Condition:</div>
-                              <div class="col-sm-6"><?php echo $row['check_drive_belts_condition'];?></div>
+                              <div class="col-sm-6"><?php if($row['check_fuel_condition'] == 1) echo 'Check Fuel/Condition';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Air Filters/Clean:</div>
-                              <div class="col-sm-6"><?php echo $row['check_air_filters_clean'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_drive_belts_condition'] == 1) echo 'Check Drive Belts/Condition';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Coolent/Condition:</div>
-                              <div class="col-sm-6"><?php echo $row['check_coolent_condition'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_air_filters_clean'] == 1) echo 'Check Air Filters/Clean';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check if any/Leakages:</div>
-                              <div class="col-sm-6"><?php echo $row['check_leakages'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_coolent_condition'] == 1) echo 'Check Coolent/Condition';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Valve Injector/Adjust:</div>
-                              <div class="col-sm-6"><?php echo $row['check_valve_injector'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_leakages'] == 1) echo 'Check if any/Leakages';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Check Battery/Condition:</div>
-                              <div class="col-sm-6"><?php echo $row['check_battery_condition'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_valve_injector'] == 1) echo 'Check Valve Injector/Adjust';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Start Check Exhaust Smoke/Limits:</div>
-                              <div class="col-sm-6"><?php echo $row['start_check_exhaust_smoke'];?></div>
+                              <div class="col-sm-4"><?php if($row['check_battery_condition'] == 1) echo 'Check Battery/Condition';?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Start Check Abnormal Sounds/Observe:</div>
-                              <div class="col-sm-6"><?php echo $row['start_check_abnormal_sounds'];?></div>
+                              <div class="col-sm-4"><?php if($row['start_check_exhaust_smoke'] == 1) echo 'Start Check Exhaust Smoke/Limits';?></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-2"></div>
+                              <div class="col-sm-4"><?php if($row['start_check_abnormal_sounds'] == 1) echo 'Start Check Abnormal Sounds/Observe';?></div>
                             </div>
                           </div>
                           <div class="modal-footer">
