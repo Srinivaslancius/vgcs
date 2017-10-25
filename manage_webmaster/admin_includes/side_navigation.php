@@ -37,6 +37,14 @@
                 <!-- <li class="<?php if($page_name == 'users.php' || $page_name == 'add_users.php' || $page_name == 'edit_users.php') { echo "active"; } ?>"><a href="users.php">Users</a></li> -->
               </ul>
             </li>
+            <li class="<?php if($page_name == 'service_form.php') { echo "active"; } ?>">
+              <a href="service_form.php" aria-haspopup="true">
+                <span class="menu-icon">
+                  <i class="zmdi zmdi-wrench zmdi-hc-fw"></i>
+                </span>
+                <span class="menu-text">Form Services</span>
+              </a>
+            </li>
             <!-- <li  class="<?php if($page_name == 'banners.php' || $page_name == 'add_banners.php' || $page_name == 'edit_banners.php') { echo "active"; } ?>">
               <a href="banners.php" aria-haspopup="true">
                 <span class="menu-icon">
