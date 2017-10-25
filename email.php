@@ -1,5 +1,6 @@
 <?php
 include "manage_webmaster/admin_includes/config.php";
+
        // echo "<pre>"; print_r($_POST); die;
       //If success
       $report_type = $_POST['report_type'];
@@ -130,7 +131,7 @@ body{
                             <h4>REPORT TYPE:</h4>
                         </div>
                         <div class="col-sm-3">
-                            <h5>AMC REPORT <input type="radio"></h5>
+                            <h5>AMC REPORT <input type="radio" ></h5>
                         </div>
                         <div class="col-sm-3">
                             <h5>SERVICE REPORT <input type="radio"></h5>
@@ -168,7 +169,7 @@ body{
                                 </div>
                                 <div class="col-sm-9">
                                     <h5><input class="form-control"placeholder="mm/dd/yyyy" id="datepicker3" 
-                                    value="'.$contact_person_name.'" readonly ></h5>
+                                    value="'.$customer_date.'" readonly ></h5>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +193,7 @@ body{
                                     <h5>Contact Email:</h5>
                                 </div>
                                 <div class="col-sm-7"> 
-                                    <h5><input type="email" class="form-control" placeholder="E-mail id"></h5>
+                                    <h5><input type="email" class="form-control" value="'.$contact_email.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +203,7 @@ body{
                                     <h5>Cell:</h5>
                                 </div>
                                 <div class="col-sm-9">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$contact_mobile.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +266,7 @@ body{
                                     <h5>ENG/Eqp Id:</h5>
                                 </div>
                                 <div class="col-sm-6" >
-                                    <h5> <input type="text" class="form-control"></h5>
+                                    <h5> <input type="text" class="form-control" value="'.$eng_eqp_id.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +276,7 @@ body{
                                     <h5>ALT./MODEL:</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$alt_model.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +286,7 @@ body{
                                     <h5>RATING/KVA:</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$rating_kva.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -299,7 +300,7 @@ body{
                                     <h5>ENG/SI.No:</h5>
                                 </div>
                                 <div class="col-sm-6" >
-                                    <h5> <input type="text" class="form-control"></h5>
+                                    <h5> <input type="text" class="form-control" value="'.$eng_sl_no.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -309,7 +310,7 @@ body{
                                     <h5>ALT./SI.No:</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$alt_sl_no.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -319,7 +320,7 @@ body{
                                     <h5>PANNEL/TYPE:</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$eng_sl_no.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +334,7 @@ body{
                                 <h5>PM/DATE:</h5>
                                 </div>
                                 <div class="col-sm-6" >
-                                    <h5> <input type="text" class="form-control"></h5>
+                                    <h5> <input type="text" class="form-control" value="'.$eng_sl_no.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -343,7 +344,7 @@ body{
                                     <h5>PM/TYPE:</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$pm_type.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -353,7 +354,7 @@ body{
                                     <h5>RUN/HRS:</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$run_hrs.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -367,7 +368,7 @@ body{
                                     <h5>DATE OF INFORMED:</h5>
                                 </div>
                                 <div class="col-sm-4">
-                                    <h5><input class="form-control"placeholder="mm/dd/yyyy" id="datepicker" required></h5>
+                                    <h5><input class="form-control"placeholder="mm/dd/yyyy" id="datepicker" value="'.$date_of_informed.'"></h5>
                                 </div>
                                 <div class="col-sm-2">
                                     <h5><span class="glyphicon glyphicon-time"></span></h5>
@@ -380,7 +381,7 @@ body{
                                     <h5>DATE OF VISIT:</h5>
                                 </div>
                                 <div class="col-sm-4">
-                                    <h5><input class="form-control"placeholder="mm/dd/yyyy" id="datepicker2" required></h5>
+                                    <h5><input class="form-control"placeholder="mm/dd/yyyy" id="datepicker2" value="'.$date_of_visit.'"></h5>
                                 </div>
                                 <div class="col-sm-2">
                                     <h5><span class="glyphicon glyphicon-time"></span></h5>
@@ -393,7 +394,7 @@ body{
                                     <h5>LOCATION:</h5>
                                 </div>
                                 <div class="col-sm-6"> 
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$location.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -417,7 +418,7 @@ body{
                                     <h5>Water Temp</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$water_temp.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -427,7 +428,7 @@ body{
                                     <h5>Fuel Pressure</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$fuel_pressure.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -437,7 +438,7 @@ body{
                                     <h5>Oil Pressure</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$oil_pressure.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -448,7 +449,7 @@ body{
                                     <h5>Battery chg</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$battery_change.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -463,7 +464,7 @@ body{
                                     <h5>Speed/Freq</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$speed_freq.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -473,7 +474,7 @@ body{
                                     <h5>Load in kw</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$load_in_kw.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -483,7 +484,7 @@ body{
                                     <h5>Load in AMPS</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$load_in_amps.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -493,7 +494,7 @@ body{
                                     <h5>Voltage</h5>
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5><input type="text" class="form-control"></h5>
+                                    <h5><input type="text" class="form-control" value="'.$voltage.'"></h5>
                                 </div>
                             </div>
                         </div>
@@ -644,7 +645,7 @@ body{
                             <h4>AMC VISIT CHECK LIST Comments if any:</h4>
                         </div>
                         <div class="col-sm-7">
-                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here.."></textarea></h4>
+                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" >'.$amc_visit_check_list_comments.'</textarea></h4>
                         </div>
                     </div>
                 </div>
@@ -654,7 +655,7 @@ body{
                             <h4>FAILURE DETAILS:</h4>
                         </div>
                         <div class="col-sm-9">
-                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here.."></textarea></h4>
+                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here..">'.$failure_details.'</textarea></h4>
                         </div>
                     </div>
                 </div>
@@ -664,7 +665,7 @@ body{
                             <h4>CAUSE OF FAILURE:</h4>
                         </div>
                         <div class="col-sm-9">
-                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here.."></textarea></h4>
+                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here..">'.$cause_of_failure.'</textarea></h4>
                         </div>
                     </div>
                 </div>
@@ -674,7 +675,7 @@ body{
                             <h4>WORK CARRIED OUT:</h4>
                         </div>
                         <div class="col-sm-9">
-                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here.."></textarea></h4>
+                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here..">'.$work_carried_out.'</textarea></h4>
                         </div>
                     </div>
                 </div>
@@ -684,7 +685,7 @@ body{
                             <h4>CUSTOMER COMMENTS:</h4>
                         </div>
                         <div class="col-sm-9">
-                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here.."></textarea></h4>
+                            <h4><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text here..">'.$customer_comments.'</textarea></h4>
                         </div>
                     </div>
                 </div>
