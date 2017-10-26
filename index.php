@@ -28,7 +28,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 <body>
 <div class="container">
 	<div class="row">
-		<form method="post" action="display_mail.php">
+		<form method="post" action="email.php">
 		<div class="col-sm-12">
 			<div class="border-div">
 				<div class="container-fluid bottom-margin">
