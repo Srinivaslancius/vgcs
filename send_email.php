@@ -1,9 +1,11 @@
 <?php
+error_reporting(1);
 include "manage_webmaster/admin_includes/config.php";
 $id = $_GET['lid'];
 
-$mailto = "harikanth@lanciussolutions.com";
+$mailto = "srinivas@lanciussolutions.com";
 $mailfrom = "harikanthnakka9@gmail.com";
+$mailsubject = "Email Attch";
 /* break description content every after 100 character. */
 
 
@@ -34,7 +36,7 @@ $content .= '
 /* you css */
 
 $sql = "SELECT * FROM service_form WHERE id='$id'";
-$result = $conn->$sql;
+$result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
 $content .= '<table>';
@@ -100,7 +102,7 @@ $body .= "--" . $separator . "--";
 
 if (mail($to, $subject, $body, $headers)) {
 
-    $msgsuccess = 'Mail Send Successfully';
+    echo $msgsuccess = 'Mail Send Successfully'; die;
 } else {
 
     $msgerror = 'Main not send';
