@@ -39,6 +39,80 @@ $sql = "SELECT * FROM service_form WHERE id='$id'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
+if ($row['check_oil_level_condition'] == 0) {
+	$check_oil_level_condition = nil; 
+}
+else {
+	$check_oil_level_condition = $row['check_oil_level_condition'];	
+}
+if ($row['check_radiator_condition'] == 0) {
+	$check_radiator_condition = nil; 
+}
+else {
+	$check_radiator_condition = $row['check_radiator_condition'];	
+}
+if ($row['check_breather_clean'] == 0) {
+	$check_breather_clean = nil; 
+}
+else {
+	$check_breather_clean = $row['check_breather_clean'];	
+}
+if ($row['check_fuel_condition'] == 0) {
+	$check_fuel_condition = nil; 
+}
+else {
+	$check_fuel_condition = $row['check_fuel_condition'];	
+}
+if ($row['check_drive_belts_condition'] == 0) {
+	$check_drive_belts_condition = nil; 
+}
+else {
+	$check_drive_belts_condition = $row['check_drive_belts_condition'];	
+}
+if ($row['check_air_filters_clean'] == 0) {
+	$check_air_filters_clean = nil; 
+}
+else {
+	$check_air_filters_clean = $row['check_air_filters_clean'];	
+}
+if ($row['check_coolent_condition'] == 0) {
+	$check_coolent_condition = nil; 
+}
+else {
+	$check_coolent_condition = $row['check_coolent_condition'];	
+}
+if ($row['check_leakages'] == 0) {
+	$check_leakages = nil; 
+}
+else {
+	$check_leakages = $row['check_leakages'];	
+}
+if ($row['check_valve_injector'] == 0) {
+	$check_valve_injector = nil; 
+}
+else {
+	$check_valve_injector = $row['check_valve_injector'];	
+}
+if ($row['check_battery_condition'] == 0) {
+	$check_battery_condition = nil; 
+}
+else {
+	$check_battery_condition = $row['check_battery_condition'];	
+}
+if ($row['start_check_exhaust_smoke'] == 0) {
+	$start_check_exhaust_smoke = nil; 
+}
+else {
+	$start_check_exhaust_smoke = $row['start_check_exhaust_smoke'];	
+}
+if ($row['start_check_abnormal_sounds'] == 0) {
+	$start_check_abnormal_sounds = nil; 
+}
+else {
+	$start_check_abnormal_sounds = $row['start_check_abnormal_sounds'];	
+}
+
+
 $content .= '<table>';
 
 $content .= '<tr><td>REPORT TYPE:</td> <td>' . $row['report_type'] . '</td> </tr>';
@@ -54,6 +128,7 @@ $content .= '<tr><td>ALT./MODEL:</td>   <td>' . $row['alt_model'] . '</td> </tr>
 $content .= '<tr><td>RATING/KVA:</td>   <td>' . $row['rating_kva'] . '</td> </tr>';
 $content .= '<tr><td>ENG/SI.No:</td>   <td>' . $row['eng_sl_no'] . '</td> </tr>';
 $content .= '<tr><td>ALT./SI.No:</td>   <td>' . $row['alt_sl_no'] . '</td> </tr>';
+$content .= '<tr><td>PANNEL/TYPE:</td>   <td>' . $row['pannel_type'] . '</td> </tr>';
 $content .= '<tr><td>PM/DATE:</td>   <td>' . $row['pm_date'] . '</td> </tr>';
 $content .= '<tr><td>PM/TYPE:</td>   <td>' . $row['pm_type'] . '</td> </tr>';
 $content .= '<tr><td>RUN/HRS:</td>   <td>' . $row['run_hrs'] . '</td> </tr>';
@@ -61,6 +136,31 @@ $content .= '<tr><td>DATE OF INFORMED:</td>   <td>' . $row['date_of_informed'] .
 $content .= '<tr><td>DATE OF VISIT:</td>   <td>' . $row['date_of_visit'] . '</td> </tr>';
 $content .= '<tr><td>LOCATION:</td>   <td>' . $row['location'] . '</td> </tr>';
 $content .= '<tr><td>VISIT CHECK LIST TYPE:</td>   <td>' . $row['visit_checklist_type'] . '</td> </tr>';
+$content .= '<tr><td>Water Temp:</td>   <td>' . $row['water_temp'] . '</td> </tr>';
+$content .= '<tr><td>Fuel Pressure:</td>   <td>' . $row['fuel_pressure'] . '</td> </tr>';
+$content .= '<tr><td>Oil Pressure:</td>   <td>' . $row['oil_pressure'] . '</td> </tr>';
+$content .= '<tr><td>Battery chg:</td>   <td>' . $row['battery_change'] . '</td> </tr>';
+$content .= '<tr><td>Speed/Freq:</td>   <td>' . $row['speed_freq'] . '</td> </tr>';
+$content .= '<tr><td>Speed/Freq:</td>   <td>' . $row['load_in_kw'] . '</td> </tr>';
+$content .= '<tr><td>Load in AMPS:</td>   <td>' . $row['load_in_amps'] . '</td> </tr>';
+$content .= '<tr><td>Voltage:</td>   <td>' . $row['voltage'] . '</td> </tr>';
+$content .= '<tr><td>Check Oil level / Condition:</td>   <td>' . $check_oil_level_condition . '</td> </tr>';
+$content .= '<tr><td>Check Radiator all Houses/Condition:</td>   <td>' . $check_radiator_condition . '</td> </tr>';
+$content .= '<tr><td>Check Breather / Clean:</td>   <td>' . $check_breather_clean . '</td> </tr>';
+$content .= '<tr><td>Check Fuel / Condition:</td>   <td>' . $check_fuel_condition. '</td> </tr>';
+$content .= '<tr><td>Check Drive Belts / Condition:</td>   <td>' . $check_drive_belts_condition . '</td> </tr>';
+$content .= '<tr><td>Check Air Filters / Clean:</td>   <td>' . $check_air_filters_clean . '</td> </tr>';
+$content .= '<tr><td>Check Coolent / Condition:</td>   <td>' . $check_coolent_condition . '</td> </tr>';
+$content .= '<tr><td>Check if any / Leakages:</td>   <td>' . $check_leakages. '</td> </tr>';
+$content .= '<tr><td>Check Valve Injector / Adjust:</td>   <td>' . $check_valve_injector . '</td> </tr>';
+$content .= '<tr><td>Check Battery / Condition:</td>   <td>' . $check_battery_condition . '</td> </tr>';
+$content .= '<tr><td>Start Check Exhaust Smoke / Limits:</td>   <td>' . $start_check_exhaust_smoke . '</td> </tr>';
+$content .= '<tr><td>Start Check Abnormal Sounds/Observe:</td>   <td>' . $start_check_abnormal_sounds. '</td> </tr>';
+$content .= '<tr><td>AMC VISIT CHECK LIST Comments if any:</td>   <td>' . $row['amc_visit_check_list_comments'] . '</td> </tr>';
+$content .= '<tr><td>FAILURE DETAILS:</td>   <td>' . $row['failure_details'] . '</td> </tr>';
+$content .= '<tr><td>CAUSE OF FAILURE:</td>   <td>' . $row['cause_of_failure'] . '</td> </tr>';
+$content .= '<tr><td>WORK CARRIED OUT:</td>   <td>' . $row['work_carried_out'] . '</td> </tr>';
+$content .= '<tr><td>CUSTOMER COMMENTS:</td>   <td>' . $row['customer_comments'] . '</td> </tr>';
 
 $content .= '</table>';
 
