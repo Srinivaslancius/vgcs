@@ -545,7 +545,7 @@ $content .= '<html><body><div class="container-fluid bottom-margin">
                                     <h5>Check Radiator all Houses/Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <p>'.$check_radiator_condition.'<?p>
+                                    <p>'.$check_radiator_condition.'</p>
                                 </div>
                             </div>
                         </div>
