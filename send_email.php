@@ -46,10 +46,23 @@ $content .= '<tr><td>SL.NO:</td>   <td>' . $row['sl_no'] . '</td> </tr>';
 $content .= '<tr><td>Customer Name:</td>   <td>' . $row['customer_name'] . '</td> </tr>';
 $content .= '<tr><td>Date:</td>   <td>' . $row['customer_date'] . '</td> </tr>';
 $content .= '<tr><td>Contact Person Name:</td>   <td>' . $row['contact_person_name'] . '</td> </tr>';
-$content .= '<tr><td>Check Oil level/Condition:</td>   <td>' . $row['check_oil_level_condition'] . '</td> </tr>';
+$content .= '<tr><td>Contact Email:</td>   <td>' . $row['contact_email'] . '</td> </tr>';
+$content .= '<tr><td>Cell:</td>   <td>' . $row['contact_mobile'] . '</td> </tr>';
+$content .= '<tr><td>VISIT TYPE:</td>   <td>' . $row['visiting_type'] . '</td> </tr>';
+$content .= '<tr><td>ENG/Eqp Id:</td>   <td>' . $row['eng_eqp_id'] . '</td> </tr>';
+$content .= '<tr><td>ALT./MODEL:</td>   <td>' . $row['alt_model'] . '</td> </tr>';
+$content .= '<tr><td>RATING/KVA:</td>   <td>' . $row['rating_kva'] . '</td> </tr>';
+$content .= '<tr><td>ENG/SI.No:</td>   <td>' . $row['eng_sl_no'] . '</td> </tr>';
+$content .= '<tr><td>ALT./SI.No:</td>   <td>' . $row['alt_sl_no'] . '</td> </tr>';
+$content .= '<tr><td>PM/DATE:</td>   <td>' . $row['pm_date'] . '</td> </tr>';
+$content .= '<tr><td>PM/TYPE:</td>   <td>' . $row['pm_type'] . '</td> </tr>';
+$content .= '<tr><td>RUN/HRS:</td>   <td>' . $row['run_hrs'] . '</td> </tr>';
+$content .= '<tr><td>DATE OF INFORMED:</td>   <td>' . $row['date_of_informed'] . '</td> </tr>';
+$content .= '<tr><td>DATE OF VISIT:</td>   <td>' . $row['date_of_visit'] . '</td> </tr>';
+$content .= '<tr><td>LOCATION:</td>   <td>' . $row['location'] . '</td> </tr>';
+$content .= '<tr><td>VISIT CHECK LIST TYPE:</td>   <td>' . $row['visit_checklist_type'] . '</td> </tr>';
 
 $content .= '</table>';
-
 
 require_once('html2pdf/html2pdf.class.php');
 
