@@ -6,9 +6,8 @@ include "manage_webmaster/admin_includes/config.php";
       $report_type = $_POST['report_type'];
       $sl_no = $_POST['sl_no'];
       $customer_name = $_POST['customer_name'];
-      //$customer_date = $_POST['customer_date'];
-      //$date=date_create($_POST['customer_date']);
-      $customer_date = $_POST['customer_date'];
+      $c_date = date_create($_POST['customer_date']);      
+      $customer_date = date_format($c_date,"Y-m-d");
       $contact_person_name = $_POST['contact_person_name'];                                 
       $contact_email = $_POST['contact_email'];
       $contact_mobile = $_POST['contact_mobile'];
@@ -21,8 +20,13 @@ include "manage_webmaster/admin_includes/config.php";
       $pm_date = $_POST['pm_date'];
       $pm_type = $_POST['pm_type'];                                 
       $run_hrs = $_POST['run_hrs'];
-      $date_of_informed = $_POST['date_of_informed'];
-      $date_of_visit = $_POST['date_of_visit'];
+      $date_inf = date_create($_POST['date_of_informed']);
+      $date_of_informed = date_format($date_inf,"Y-m-d");
+
+      $date_vsrt = date_create($_POST['date_of_visit']);
+      $date_of_visit = date_format($date_vsrt,"Y-m-d");
+
+      
       $location = $_POST['location'];
       $visit_checklist_type = $_POST['visit_checklist_type'];
       $water_temp = $_POST['water_temp'];
@@ -38,6 +42,8 @@ include "manage_webmaster/admin_includes/config.php";
       $cause_of_failure = $_POST['cause_of_failure'];
       $work_carried_out = $_POST['work_carried_out'];
       $customer_comments = $_POST['customer_comments'];
+
+      //checkbox for AMC serivces
       $check_oil_level_condition = $_POST['check_oil_level_condition'];
       $check_radiator_condition = $_POST['check_radiator_condition'];
       $check_breather_clean = $_POST['check_breather_clean'];
@@ -50,36 +56,142 @@ include "manage_webmaster/admin_includes/config.php";
       $check_battery_condition = $_POST['check_battery_condition'];
       $start_check_exhaust_smoke = $_POST['start_check_exhaust_smoke'];
       $start_check_abnormal_sounds = $_POST['start_check_abnormal_sounds'];
-                                                          
-      $sql = "INSERT INTO service_form (`report_type`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`) VALUES ('$report_type','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds')"; 
+      //End checkbox list
+      $created_at = date("Y-m-d h:i:s");
 
-    $conn->query($sql);
+      $sql = "INSERT INTO service_form (`report_type`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`,`created_at`) VALUES ('$report_type','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds','$created_at')"; 
+      $conn->query($sql);
 
-        if((int)$check_fuel_condition == 1 ) {
-          //echo "success";
-           $checked = "checked";
-           echo $checked; 
-        }else{
-          echo "false";
-        }
-      
+     //Radio buttons 
+
+     if(isset($_POST['report_type']) && $_POST['report_type'] == 'AMC REPORT') { 
+        $report_type1 = 'checked=checked';
+     } else {
+        $report_type1 = "";
+     }
+
+     if(isset($_POST['report_type']) && $_POST['report_type'] == 'SERVICE REPORT') { 
+        $report_type2 = 'checked=checked';
+     } else {
+        $report_type2 = "";
+     }
+
+     if(isset($_POST['visiting_type']) && $_POST['visiting_type'] == 'Commissioning Visit') { 
+        $visit_type1 = 'checked=checked';
+     } else {
+        $visit_type1 = "";
+     }
+
+     if(isset($_POST['visiting_type']) && $_POST['visiting_type'] == 'Paid Visit') { 
+        $visit_type2 = 'checked=checked';
+     } else {
+        $visit_type2 = "";
+     }
+
+     if(isset($_POST['visiting_type']) && $_POST['visiting_type'] == 'Break Down Visit') { 
+        $visit_type3 = 'checked=checked';
+     } else {
+        $visit_type3 = "";
+     }
+
+     if(isset($_POST['visiting_type']) && $_POST['visiting_type'] == 'AMC Visit') { 
+        $visit_type4 = 'checked=checked';
+     } else {
+        $visit_type4 = "";
+     }
+
+     //end here radio buttons
+     
+     //Check chebox conditions here
+     if(isset($_POST['check_oil_level_condition']) && $_POST['check_oil_level_condition'] == 1) { 
+        $check_oil_level_condition_check = 'checked=checked';
+     } else {
+        $check_oil_level_condition_check = "";
+     }
+
+     if(isset($_POST['check_radiator_condition']) && $_POST['check_radiator_condition'] == 1) { 
+        $check_radiator_condition_check = 'checked=checked';
+     } else {
+        $check_radiator_condition_check = "";
+     }
+
+     if(isset($_POST['check_breather_clean']) && $_POST['check_breather_clean'] == 1) { 
+        $check_breather_clean_check = 'checked=checked';
+     } else {
+        $check_breather_clean_check = "";
+     }
+
+     if(isset($_POST['check_fuel_condition']) && $_POST['check_fuel_condition'] == 1) { 
+        $check_fuel_condition_check = 'checked=checked';
+     } else {
+        $check_fuel_condition_check = "";
+     }
+
+     if(isset($_POST['check_drive_belts_condition']) && $_POST['check_drive_belts_condition'] == 1) { 
+        $check_drive_belts_condition_check = 'checked=checked';
+     } else {
+        $check_drive_belts_condition_check = "";
+     }
+
+     if(isset($_POST['check_air_filters_clean']) && $_POST['check_air_filters_clean'] == 1) { 
+        $check_air_filters_clean_check = 'checked=checked';
+     } else {
+        $check_air_filters_clean_check = "";
+     }
+
+     if(isset($_POST['check_coolent_condition']) && $_POST['check_coolent_condition'] == 1) { 
+        $check_coolent_condition_check = 'checked=checked';
+     } else {
+        $check_coolent_condition_check = "";
+     }
+
+     if(isset($_POST['check_leakages']) && $_POST['check_leakages'] == 1) { 
+        $check_leakages_check = 'checked=checked';
+     } else {
+        $check_leakages_check = "";
+     }
+
+     if(isset($_POST['check_valve_injector']) && $_POST['check_valve_injector'] == 1) { 
+        $check_valve_injector_check = 'checked=checked';
+     } else {
+        $check_valve_injector_check = "";
+     }
+
+     if(isset($_POST['check_battery_condition']) && $_POST['check_battery_condition'] == 1) { 
+        $check_battery_condition_check = 'checked=checked';
+     } else {
+        $check_battery_condition_check = "";
+     }
+
+     if(isset($_POST['start_check_exhaust_smoke']) && $_POST['start_check_exhaust_smoke'] == 1) { 
+        $start_check_exhaust_smoke_check = 'checked=checked';
+     } else {
+        $start_check_exhaust_smoke_check = "";
+     }
+
+     if(isset($_POST['start_check_abnormal_sounds']) && $_POST['start_check_abnormal_sounds'] == 1) { 
+        $start_check_abnormal_sounds_check = 'checked=checked';
+     } else {
+        $start_check_abnormal_sounds_check = "";
+     }
     
-$content = '';
-$content .= '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="style.css">
-<style>
-body{
+
+    $mailto = "srinivas@lanciussolutions.com";
+    $mailfrom = "harikanthnakka9@gmail.com";
+    $mailsubject = 'Test Subject';  
+
+
+    $content = '';    
+
+    $content .= '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+  body{
    overflow-x: hidden;
   }
   .border-div{
   border:2px solid black;
   margin: 10px 0;
+  width:795px;
   }
    
    .bottom-margin{
@@ -109,24 +221,16 @@ body{
   .btn-lg{
       background-color:#154360 !important;
   }
-
-
- </style>
-
- ';
-    /* you css */
+ </style>';
     
-    $content .= '<body><div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="border-div">
-                <div class="container-fluid bottom-margin">
+    
+    $content .= '<div class="container-fluid bottom-margin">
                     <div class="row">
                         <div class="col-sm-3">
-                            <center><h3>VGCS</h3></center>
+                            <h3>VGCS</h3>
                         </div>
                         <div class="col-sm-6">
-                            <center><h3>VENUS GENIE CARE SERVICES</h3></center>
+                            <h3>VENUS GENIE CARE SERVICES</h3>
                         </div>
                         <div class="col-sm-3">
                             <h5>MOBILE: +91-98492575</h5>
@@ -140,10 +244,10 @@ body{
                             <h4>REPORT TYPE:</h4>
                         </div>
                         <div class="col-sm-3">
-                            <h5>AMC REPORT <input type="radio" ></h5>
+                            <h5>AMC REPORT <input type="radio" '.$report_type1.'></h5>
                         </div>
                         <div class="col-sm-3">
-                            <h5>SERVICE REPORT <input type="radio"></h5>
+                            <h5>SERVICE REPORT <input type="radio" '.$report_type2.'></h5>
                         </div>
                         <div class="col-sm-3">
                             <div class="row">
@@ -229,7 +333,7 @@ body{
                                 <h5>Commissioning Visit</h5>
                                 </div>
                                 <div class="col-sm-4">
-                                <h5><input type="radio"></h5>
+                                <h5><input type="radio" '.$visit_type1.'></h5>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +343,7 @@ body{
                                     <h5>Paid Visit</h5>
                                 </div>
                                 <div class="col-sm-4">
-                                    <h5><input type="radio"></h5>
+                                    <h5><input type="radio" '.$visit_type2.'></h5>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +354,7 @@ body{
                                     <h5>Break Down Visit</h5>
                                 </div>
                                 <div class="col-sm-4">
-                                    <h5><input type="radio"></h5>
+                                    <h5><input type="radio" '.$visit_type3.'></h5>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +365,7 @@ body{
                                     <h5>AMC Visit</h5>
                                 </div>
                                 <div class="col-sm-4">
-                                    <h5><input type="radio"></h5>
+                                    <h5><input type="radio" '.$visit_type4.'></h5>
                                 </div>
                             </div>
                         </div>
@@ -412,10 +516,10 @@ body{
                 <div class="container-fluid bottom-margin">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h4>AMC VISIT CHECK LIST <input type="radio"></h4>
+                            <h4>AMC VISIT CHECK LIST <input type="radio" '.$report_type1.'></h4>
                         </div>
                         <div class="col-sm-4">
-                            <h4>SERVICE VISIT CHECK LIST <input type="radio"></h4>
+                            <h4>SERVICE VISIT CHECK LIST <input type="radio" '.$report_type2.'></h4>
                         </div>
                     </div>
                 </div>
@@ -517,7 +621,7 @@ body{
                                     <h5>Check Oil level / Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox" value="'.$checked.'">
+                                    <input type="checkbox" value="'.$check_oil_level_condition_check.'">
                                 </div>
                             </div>
                         </div>
@@ -527,7 +631,7 @@ body{
                                     <h5>Check Radiator all Houses/Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox" value="'.$checked.'">
+                                    <input type="checkbox" value="'.$check_radiator_condition_check.'">
                                 </div>
                             </div>
                         </div>
@@ -537,7 +641,7 @@ body{
                                     <h5>Check Breather / Clean</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox" value="'.$checked.'">
+                                    <input type="checkbox" value="'.$check_breather_clean.'">
                                 </div>
                             </div>
                         </div>
@@ -551,7 +655,7 @@ body{
                                     <h5>Check Fuel / Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox" value="'.$checked.'">
+                                    <input type="checkbox" '.$check_fuel_condition_check.'>
                                 </div>
                             </div>
                         </div>
@@ -561,7 +665,7 @@ body{
                                     <h5>Check Drive Belts / Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" '.$check_drive_belts_condition_check.'>
                                 </div>
                             </div>
                         </div>
@@ -571,7 +675,7 @@ body{
                                     <h5>Check Air Filters / Clean</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" '.$check_air_filters_clean_check.'>
                                 </div>
                             </div>
                         </div>
@@ -586,7 +690,7 @@ body{
                                 <h5>Check Coolent / Condition</h5>
                             </div>
                             <div class="col-sm-2">
-                                <input type="checkbox">
+                                <input type="checkbox" '.$check_coolent_condition_check.'>
                             </div>
                         </div>
                     </div>
@@ -596,7 +700,7 @@ body{
                                 <h5>Check if any / Leakages</h5>
                             </div>
                             <div class="col-sm-2">
-                                <input type="checkbox">
+                                <input type="checkbox" '.$check_leakages_check.'>
                             </div>
                         </div>
                     </div>
@@ -606,7 +710,7 @@ body{
                                 <h5>Check Valve Injector / Adjust</h5>
                             </div>
                             <div class="col-sm-2">
-                                <input type="checkbox">
+                                <input type="checkbox" '.$check_valve_injector_check.'>
                             </div>
                         </div>
                     </div>
@@ -620,7 +724,7 @@ body{
                                     <h5>Check Battery / Condition</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" '.$check_battery_condition_check.'>
                                 </div>
                             </div>
                         </div>
@@ -631,7 +735,7 @@ body{
                                     <h5>Start Check Exhaust Smoke / Limits</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" '.$start_check_exhaust_smoke_check.'>
                                 </div>
                             </div>
                         </div>
@@ -642,7 +746,7 @@ body{
                                     <h5>Start Check Abnormal Sounds/Observe</h5>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="checkbox">
+                                    <input type="checkbox" '.$start_check_abnormal_sounds_check.'>
                                 </div>
                             </div>
                         </div>
@@ -718,21 +822,17 @@ body{
                         </div>                      
                     </div>
                     
-                </div>
-            </div>
-        </div>  
-    </div>
-</div> </body>';
+                </div>';
 
-    echo $content; die;
+    //echo $content; die;
 
 
     require_once('html2pdf/html2pdf.class.php');
 
 
-    $to = 'srinivas@lanciussolutions.com';
-    $from = 'srinivas@lanciussolutions.com';
-    $subject = 'Test Subject';  
+    $to = $mailto;
+    $from = $mailfrom;
+    $subject = $mailsubject;
 
     $html2pdf = new HTML2PDF('P', 'A4', 'fr');
 
@@ -749,9 +849,6 @@ body{
     $filename = "pdf-document.pdf";
     $pdfdoc = $html2pdf->Output('', 'S');
     $attachment = chunk_split(base64_encode($pdfdoc));
-
-
-
 
     $headers = "From: " . $from . $eol;
     $headers .= "MIME-Version: 1.0" . $eol;
@@ -778,8 +875,8 @@ body{
 
     if (mail($to, $subject, $body, $headers)) {
 
-        $msgsuccess = 'Mail Send Successfully';
-        header('Location: thankyou.php');
+        echo $msgsuccess = 'Mail Send Successfully';
+        //header('Location: thankyou.php');
     } else {
 
         $msgerror = 'Main not send';

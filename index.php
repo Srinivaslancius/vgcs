@@ -28,7 +28,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 <body>
 <div class="container">
 	<div class="row">
-		<form method="post" action="email.php">
+		<form method="post" action="display_mail.php">
 		<div class="col-sm-12">
 			<div class="border-div">
 				<div class="container-fluid bottom-margin">
@@ -437,7 +437,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Check Radiator all Houses/Condition</h5>
 								</div>
 								<div class="col-sm-2">
-									<input type="checkbox" name="check_radiator_condition" value="<?php if($_POST['check_radiator_condition'] == "checked") { echo 1; } else { echo 0; } ?>">
+									<input type="checkbox" name="check_radiator_condition" value="<?php if($_POST['check_radiator_condition'] = "checked") { echo 1; } else { echo 0; } ?>">
 								</div>
 							</div>
 						</div>
