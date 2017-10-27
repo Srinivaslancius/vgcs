@@ -371,6 +371,7 @@ $body .= "--" . $separator . "--";
 
 if (mail($to, $subject, $body, $headers)) {
 
+    header("Location: thank_you.php?id=".$id."");
     echo $msgsuccess = 'Mail Send Successfully'; die;
 } else {
 
