@@ -719,7 +719,7 @@ $content .= '<tr><div class="container-fluid bottom-margin" style="border-bottom
                 </div></tr>';
 
 $content .= '</table>';
-echo $content; die;
+//echo $content; die;
 
 require_once('html2pdf/html2pdf.class.php');
 
