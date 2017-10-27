@@ -336,7 +336,7 @@ $to = $mailto;
 $from = $mailfrom;
 $subject = $mailsubject;
 
-$message = "<p>Dear ". $row['customer_name'] . ", <br />Please see the VGCS Service Details attachment.</p>";
+$message = "<p>Dear ". $row['customer_name'] . ", <br /><br />Please see the VGCS Service Details attachment.</p>";
 $separator = md5(time());
 $eol = PHP_EOL;
 $filename = "pdf-document.pdf";
