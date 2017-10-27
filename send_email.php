@@ -111,28 +111,28 @@ else {
     $visit_checklist_type = 'SERVICE VISIT CHECK LIST ';    
 }
 
-// $content .= '
-//     <style>
-//     table {
-//     border-collapse: collapse;
-//     }
+ $content .= '
+     <style>
+     table {
+     border-collapse: collapse;
+     }
 
-//     table{
-//      width:800px;
-//      margin:0 auto;
-//     }
+     table{
+      width:800px;
+      margin:0 auto;
+     }
 
-//     td{
-//     border: 1px solid #e2e2e2;
-//     padding: 10px; 
-//     max-width:520px;
-//     word-wrap: break-word;
-//     }
+     td{
+     border: 1px solid #e2e2e2;
+     padding: 10px; 
+     max-width:520px;
+     word-wrap: break-word;
+     }
 
 
-//     </style>
+     </style>
 
-//     ';
+   ';
 
 $content .= '<style>
     .container{
@@ -336,7 +336,7 @@ $to = $mailto;
 $from = $mailfrom;
 $subject = $mailsubject;
 
-$message = "<p>Please see the attachment.</p>";
+$message = "<p>Dear ". $row['customer_name'] . ", <br />Please see the VGCS Service Details attachment.</p>";
 $separator = md5(time());
 $eol = PHP_EOL;
 $filename = "pdf-document.pdf";
