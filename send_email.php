@@ -2,17 +2,17 @@
 error_reporting(1);
 include "manage_webmaster/admin_includes/config.php";
 $id = $_GET['lid'];
+$sql = "SELECT * FROM service_form WHERE id='$id'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 
-$mailto = "srinivas@lanciussolutions.com";
-$mailfrom = "srinud8008@gmail.com";
+$mailto = $row['contact_email'];
+$mailfrom = "venugopal.7@hotmail.com";
 $mailsubject = "VGCS Service Details";
 /* break description content every after 100 character. */
 
 
 $content = '';
-$sql = "SELECT * FROM service_form WHERE id='$id'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
 
 if ($row['check_oil_level_condition'] == 0) {
     $check_oil_level_condition = NO; 
@@ -336,7 +336,7 @@ $to = $mailto;
 $from = $mailfrom;
 $subject = $mailsubject;
 
-$message = "<p>Dear ". $row['customer_name'] . ", <br /><br />Please see the VGCS Service Details attachment.</p>";
+$message = "<p>Dear ". $row['customer_name'] . ", <br /><br />Please see the VGCS Service Details attachment.</p><br /><br />Thank You<br/>VGCS.";
 $separator = md5(time());
 $eol = PHP_EOL;
 $filename = "pdf-document.pdf";
