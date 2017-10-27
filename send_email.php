@@ -10,29 +10,129 @@ $mailsubject = "VGCS Service Details";
 
 
 $content = '';
+$sql = "SELECT * FROM service_form WHERE id='$id'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 
-$content .= '
-    <style>
-    table {
-    border-collapse: collapse;
-    }
+if ($row['check_oil_level_condition'] == 0) {
+    $check_oil_level_condition = NO; 
+}
+else {
+    $check_oil_level_condition = 'YES'; 
+}
+if ($row['check_radiator_condition'] == 0) {
+    $check_radiator_condition = NO; 
+}
+else {
+    $check_radiator_condition = 'YES';   
+}
+if ($row['check_breather_clean'] == 0) {
+    $check_breather_clean = NO; 
+}
+else {
+    $check_breather_clean = 'YES';   
+}
+if ($row['check_fuel_condition'] == 0) {
+    $check_fuel_condition = NO; 
+}
+else {
+    $check_fuel_condition = 'YES';   
+}
+if ($row['check_drive_belts_condition'] == 0) {
+    $check_drive_belts_condition = NO; 
+}
+else {
+    $check_drive_belts_condition = 'YES'; 
+}
+if ($row['check_air_filters_clean'] == 0) {
+    $check_air_filters_clean = NO; 
+}
+else {
+    $check_air_filters_clean = 'YES'; 
+}
+if ($row['check_coolent_condition'] == 0) {
+    $check_coolent_condition = NO; 
+}
+else {
+    $check_coolent_condition = 'YES'; 
+}
+if ($row['check_leakages'] == 0) {
+    $check_leakages = NO; 
+}
+else {
+    $check_leakages = 'YES';   
+}
+if ($row['check_valve_injector'] == 0) {
+    $check_valve_injector = NO; 
+}
+else {
+    $check_valve_injector = 'YES';   
+}
+if ($row['check_battery_condition'] == 0) {
+    $check_battery_condition = NO; 
+}
+else {
+    $check_battery_condition = 'YES'; 
+}
+if ($row['start_check_exhaust_smoke'] == 0) {
+    $start_check_exhaust_smoke = NO; 
+}
+else {
+    $start_check_exhaust_smoke = 'YES'; 
+}
+if ($row['start_check_abnormal_sounds'] == 0) {
+    $start_check_abnormal_sounds = NO; 
+}
+else {
+    $start_check_abnormal_sounds = 'YES'; 
+}
+if ($row['report_type'] == 'AMC REPORT') {
+    $report_type = 'AMC REPORT'; 
+}
+else {
+    $report_type = 'SERVICE REPORT';    
+}
+if ($row['visiting_type'] == 'Commissioning Visit') {
+    $visit_type1 = 'Commissioning Visit'; 
+}
+elseif ($row['visiting_type'] == 'Paid Visit') {
+    $visit_type1 = 'Paid Visit'; 
+}
+elseif ($row['visiting_type'] == 'Break Down Visit') {
+    $visit_type1 = 'Break Down Visit'; 
+}
+else {
+    $visit_type1 = 'AMC Visit';     
+}
+if ($row['visit_checklist_type'] == 'AMC VISIT CHECK LIST ') {
+    $visit_checklist_type = 'AMC VISIT CHECK LIST '; 
+}
+else {
+    $visit_checklist_type = 'SERVICE VISIT CHECK LIST ';    
+}
 
-    table{
-     width:800px;
-     margin:0 auto;
-    }
+// $content .= '
+//     <style>
+//     table {
+//     border-collapse: collapse;
+//     }
 
-    td{
-    border: 1px solid #e2e2e2;
-    padding: 10px; 
-    max-width:520px;
-    word-wrap: break-word;
-    }
+//     table{
+//      width:800px;
+//      margin:0 auto;
+//     }
+
+//     td{
+//     border: 1px solid #e2e2e2;
+//     padding: 10px; 
+//     max-width:520px;
+//     word-wrap: break-word;
+//     }
 
 
-    </style>
+//     </style>
 
-    ';
+//     ';
 
 $content .= '<style>
     .container{
@@ -67,135 +167,135 @@ $content .= '<div class="container" style="padding-right:0px">
     <tbody>
       <tr>
         <td>REPORT TYPE:</td>
-        <td>AMC REPORT</td>
-        <td></td>
+        <td>'.$report_type.'</td>
         <td>SL.NO.</td>
-        <td>Date:</td>
+        <td>' . $row['sl_no'] . '</td>
+        <td>Date:' . $row['customer_date'] . '</td>
 
       </tr>
        <tr>
-        <td>Customer Name:</td>
+        <td>Customer Name:' . $row['customer_name'] . '</td>
+        <td>Contact Person Name:' . $row['contact_person_name'] . '</td>
+        <td>Email:' . $row['contact_email'] . '</td>
         <td></td>
-        <td>Email:</td>
-        <td></td>
-        <td>Cell:</td>
+        <td>Cell:' . $row['contact_mobile'] . '</td>
       </tr>
         <tr>
         <td>VISIT TYPE:</td>
-        <td>Commissioning Visit</td>
-        <td>Paid Visit</td>
-        <td>Break Down Visit</td>
-        <td>AMC Visit</td>
-      </tr>
-      <tr>
-        <td>ENG/Eqp Id:</td>
-        <td></td>
-        <td>ALT./MODEL:</td>
-        <td></td>
-        <td>RATING/KVA:</td>
-      </tr>
-      <tr>
-        <td>ENG/SI.No:</td>
-        <td></td>
-        <td>ALT./SI.No:</td>
-        <td></td>
-        <td>PANNEL/TYPE:</td>
-      </tr>
-       <tr>
-        <td>PM/DATE:</td>
-        <td></td>
-        <td>PM/TYPE:</td>
-        <td></td>
-        <td>RUN/HRS:</td>
-      </tr>
-      <tr>
-        <td>DATE OF INFORMED:</td>
-        <td></td>
-        <td>DATE OF VISIT:</td>
-        <td></td>
-        <td>LOCATION:</td>
-      </tr>
-      <tr>
-        <td>AMC VISIT CHECK LIST </td>
+        <td>' . $row['visiting_type'] . '</td>
         <td></td>
         <td></td>
-        <td></td>
-        <td>SERVICE VISIT CHECK LIST</td>
-      </tr>
-       <tr>
-        <td>Water Temp</td>
-        <td>Fuel Pressure</td>
-        <td>Oil Pressure</td>
-        <td>Battery chg</td>
-        <td></td>
-      </tr>
-       <tr>
-        <td>Speed/Freq</td>
-        <td>Load in kw</td>
-        <td>Load in AMPS</td>
-        <td>Voltage</td>
         <td></td>
       </tr>
       <tr>
-        <td>Check Oil level / Condition</td>
+        <td>ENG/Eqp Id:' . $row['eng_eqp_id'] . '</td>
         <td></td>
-        <td>Check Radiator all Houses/Condition</td>
+        <td>ALT./MODEL:' . $row['alt_model'] . '</td>
         <td></td>
-        <td>Check Breather / Clean</td>
+        <td>RATING/KVA:' . $row['rating_kva'] . '</td>
+      </tr>
+      <tr>
+        <td>ENG/SI.No:' . $row['eng_sl_no'] . '</td>
+        <td></td>
+        <td>ALT./SI.No:' . $row['alt_sl_no'] . '</td>
+        <td></td>
+        <td>PANNEL/TYPE:' . $row['pannel_type'] . '</td>
       </tr>
        <tr>
-        <td>Check Fuel / Condition</td>
+        <td>PM/DATE:' . $row['pm_date'] . '</td>
         <td></td>
-        <td>Check Drive Belts / Condition</td>
+        <td>PM/TYPE:' . $row['pm_type'] . '</td>
         <td></td>
-        <td>Check Air Filters / Clean</td>
+        <td>RUN/HRS:' . $row['run_hrs'] . '</td>
+      </tr>
+      <tr>
+        <td>DATE OF INFORMED:' . $row['date_of_informed'] . '</td>
+        <td></td>
+        <td>DATE OF VISIT:' . $row['date_of_visit'] . '</td>
+        <td></td>
+        <td>LOCATION:' . $row['location'] . '</td>
+      </tr>
+      <tr>
+        <td><strong>VISIT CHECK LIST:</strong></td>
+        <td></td>
+        <td>' . $row['visit_checklist_type'] . '</td>
+        <td></td>
+        <td></td>
       </tr>
        <tr>
-        <td>Check Coolent / Condition</td>
+        <td>Water Temp:' . $row['water_temp'] . '</td>
+        <td>Fuel Pressure:' . $row['fuel_pressure'] . '</td>
+        <td>Oil Pressure:' . $row['oil_pressure'] . '</td>
+        <td>Battery chg:' . $row['battery_change'] . '</td>
         <td></td>
-        <td>Check if any / Leakages</td>
-        <td></td>
-        <td>Check Valve Injector / Adjust</td>
       </tr>
        <tr>
-        <td>Check Battery / Condition</td>
+        <td>Speed/Freq:' . $row['speed_freq'] . '</td>
+        <td>Load in kw:' . $row['load_in_kw'] . '</td>
+        <td>Load in AMPS:' . $row['load_in_amps'] . '</td>
+        <td>Voltage:' . $row['voltage'] . '</td>
         <td></td>
-        <td>Start Check Exhaust Smoke / Limits</td>
+      </tr>
+      <tr>
+        <td>Check Oil level / Condition:' . $check_oil_level_condition . '</td>
         <td></td>
-        <td>Start Check Abnormal Sounds/Observe</td>
+        <td>Check Radiator all Houses/Condition:' . $check_radiator_condition . '</td>
+        <td></td>
+        <td>Check Breather/Clean:' . $check_breather_clean . '</td>
+      </tr>
+       <tr>
+        <td>Check Fuel/Condition:' . $check_fuel_condition. '</td>
+        <td></td>
+        <td>Check Drive Belts/Condition' . $check_drive_belts_condition . '</td>
+        <td></td>
+        <td>Check Air Filters/Clean:' . $check_air_filters_clean . '</td>
+      </tr>
+       <tr>
+        <td>Check Coolent/Condition:' . $check_coolent_condition . '</td>
+        <td></td>
+        <td>Check if any/Leakages:' . $check_leakages. '</td>
+        <td></td>
+        <td>Check Valve Injector/Adjust:' . $check_valve_injector . '</td>
+      </tr>
+       <tr>
+        <td>Check Battery/Condition:' . $check_battery_condition . '</td>
+        <td></td>
+        <td>Start Check Exhaust Smoke/Limits:' . $start_check_exhaust_smoke . '</td>
+        <td></td>
+        <td>Start Check Abnormal Sounds/Observe:' . $start_check_abnormal_sounds. '</td>
       </tr>
       <tr>
         <td>AMC VISIT CHECK LIST Comments if any:</td>
         <td></td>
-        <td></td>
+        <td>' . $row['amc_visit_check_list_comments'] . '</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td>FAILURE DETAILS:</td>
         <td></td>
-        <td></td>
+        <td>' . $row['failure_details'] . '</td>
         <td></td>
         <td></td>
       </tr>
        <tr>
         <td>CAUSE OF FAILURE:</td>
         <td></td>
-        <td></td>
+        <td>' . $row['cause_of_failure'] . '</td>
         <td></td>
         <td></td>
       </tr>
        <tr>
         <td>WORK CARRIED OUT:</td>
         <td></td>
-        <td></td>
+        <td>' . $row['work_carried_out'] . '</td>
         <td></td>
         <td></td>
       </tr>
        <tr>
         <td>CUSTOMER COMMENTS:</td>
         <td></td>
-        <td></td>
+        <td>' . $row['customer_comments'] . '</td>
         <td></td>
         <td></td>
       </tr>
