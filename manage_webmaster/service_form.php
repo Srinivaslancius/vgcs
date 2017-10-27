@@ -29,6 +29,80 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                     <td><?php echo $row['visiting_type'];?></td>
                     <td><?php echo $row['customer_name'];?></td>
                     <td><a href="#"><i class="zmdi zmdi-eye zmdi-hc-fw" data-toggle="modal" data-target="#<?php echo $row['id']; ?>" class=""></i></a></td>
+                    <?php
+                    if ($row['check_oil_level_condition'] == 0) {
+                        $check_oil_level_condition = NO; 
+                    }
+                    else {
+                        $check_oil_level_condition = 'YES'; 
+                    }
+                    if ($row['check_radiator_condition'] == 0) {
+                        $check_radiator_condition = NO; 
+                    }
+                    else {
+                        $check_radiator_condition = 'YES';   
+                    }
+                    if ($row['check_breather_clean'] == 0) {
+                        $check_breather_clean = NO; 
+                    }
+                    else {
+                        $check_breather_clean = 'YES';   
+                    }
+                    if ($row['check_fuel_condition'] == 0) {
+                        $check_fuel_condition = NO; 
+                    }
+                    else {
+                        $check_fuel_condition = 'YES';   
+                    }
+                    if ($row['check_drive_belts_condition'] == 0) {
+                        $check_drive_belts_condition = NO; 
+                    }
+                    else {
+                        $check_drive_belts_condition = 'YES'; 
+                    }
+                    if ($row['check_air_filters_clean'] == 0) {
+                        $check_air_filters_clean = NO; 
+                    }
+                    else {
+                        $check_air_filters_clean = 'YES'; 
+                    }
+                    if ($row['check_coolent_condition'] == 0) {
+                        $check_coolent_condition = NO; 
+                    }
+                    else {
+                        $check_coolent_condition = 'YES'; 
+                    }
+                    if ($row['check_leakages'] == 0) {
+                        $check_leakages = NO; 
+                    }
+                    else {
+                        $check_leakages = 'YES';   
+                    }
+                    if ($row['check_valve_injector'] == 0) {
+                        $check_valve_injector = NO; 
+                    }
+                    else {
+                        $check_valve_injector = 'YES';   
+                    }
+                    if ($row['check_battery_condition'] == 0) {
+                        $check_battery_condition = NO; 
+                    }
+                    else {
+                        $check_battery_condition = 'YES'; 
+                    }
+                    if ($row['start_check_exhaust_smoke'] == 0) {
+                        $start_check_exhaust_smoke = NO; 
+                    }
+                    else {
+                        $start_check_exhaust_smoke = 'YES'; 
+                    }
+                    if ($row['start_check_abnormal_sounds'] == 0) {
+                        $start_check_abnormal_sounds = NO; 
+                    }
+                    else {
+                        $start_check_abnormal_sounds = 'YES'; 
+                    }
+                    ?>
                      <!-- Open Modal Box  here -->
                     <div id="<?php echo $row['id']; ?>" class="modal fade" tabindex="-1" role="dialog">
                       <div class="modal-dialog">
@@ -207,56 +281,63 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">VISIT CHECK LIST:</div>
+                              <div class="col-sm-4">Check Oil level/Condition:</div>
+                              <div class="col-sm-6"><?php echo $check_oil_level_condition;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_oil_level_condition'] == 1) echo 'Check Oil level/Condition';?></div>
+                              <div class="col-sm-4">Check Radiator all Houses/Condition:</div>
+                              <div class="col-sm-6"><?php echo $check_radiator_condition;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_radiator_condition'] == 1) echo 'Check Radiator all Houses/Condition';?></div>
+                              <div class="col-sm-4">Check Breather/Clean:</div>
+                              <div class="col-sm-6"><?php echo $check_breather_clean;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_breather_clean'] == 1) echo 'Check Breather/Clean';?></div>
+                              <div class="col-sm-4">Check Fuel/Condition:</div>
+                              <div class="col-sm-6"><?php echo $check_fuel_condition;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-6"><?php if($row['check_fuel_condition'] == 1) echo 'Check Fuel/Condition';?></div>
+                              <div class="col-sm-4">Check Drive Belts/Condition:</div>
+                              <div class="col-sm-6"><?php echo $check_drive_belts_condition;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_drive_belts_condition'] == 1) echo 'Check Drive Belts/Condition';?></div>
+                              <div class="col-sm-4">Check Air Filters/Clean:</div>
+                              <div class="col-sm-6"><?php echo $check_air_filters_clean;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_air_filters_clean'] == 1) echo 'Check Air Filters/Clean';?></div>
+                              <div class="col-sm-4">Check Coolent/Condition:</div>
+                              <div class="col-sm-6"><?php echo $check_coolent_condition;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_coolent_condition'] == 1) echo 'Check Coolent/Condition';?></div>
+                              <div class="col-sm-4">Check if any/Leakages:</div>
+                              <div class="col-sm-6"><?php echo $check_leakages;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_leakages'] == 1) echo 'Check if any/Leakages';?></div>
+                              <div class="col-sm-4">Check Valve Injector/Adjust:</div>
+                              <div class="col-sm-6"><?php echo $check_valve_injector;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_valve_injector'] == 1) echo 'Check Valve Injector/Adjust';?></div>
+                              <div class="col-sm-4">Check Battery/Condition:</div>
+                              <div class="col-sm-6"><?php echo $check_battery_condition;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['check_battery_condition'] == 1) echo 'Check Battery/Condition';?></div>
+                              <div class="col-sm-4">Start Check Exhaust Smoke/Limits:</div>
+                              <div class="col-sm-6"><?php echo $start_check_exhaust_smoke;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['start_check_exhaust_smoke'] == 1) echo 'Start Check Exhaust Smoke/Limits';?></div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-2"></div>
-                              <div class="col-sm-4"><?php if($row['start_check_abnormal_sounds'] == 1) echo 'Start Check Abnormal Sounds/Observe';?></div>
+                              <div class="col-sm-4">Start Check Abnormal Sounds/Observe:</div>
+                              <div class="col-sm-6"><?php echo $start_check_abnormal_sounds;?></div>
                             </div>
                           </div>
                           <div class="modal-footer">
