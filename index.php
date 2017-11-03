@@ -692,6 +692,7 @@ $(document).ready(function(){
 		            $('#alt_model').val(data[5]);
 		            $('#rating_kva').val(data[6]);
 		            $('#pannel_type').val(data[7]);
+		            $('#run_hrs').val(data[8]);
 	          	}
 	          	
 	          }
