@@ -39,10 +39,9 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-4">
 						<div class="form-group">
 						  <label for="sel1"></label>
-						  <select class="form-control" id="sel1">
-							<option>SELECT ONE:</option>
-							<option>VENUS GENIE CARE SERVICES</option>
-							<option>MEDHA ELECTRICAL CONTRACT</option>
+						  <select class="form-control" id="sel1" name="company_name">
+							<option value="VENUS GENIE CARE SERVICES">VENUS GENIE CARE SERVICES</option>
+							<option value="MEDHA ELECTRICAL CONTRACT">MEDHA ELECTRICAL CONTRACT</option>
 						  </select>
 						</div>
 						</div>
@@ -71,7 +70,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>SL.NO.</h5>
 								</div>
 								<div class="col-sm-8">
-									<h5><input type="text" class="form-control" name="sl_no" id="sl_no"></h5>
+									<h5><input type="text" class="form-control" name="sl_no" id="sl_no" required></h5>
 								</div>
 							</div>
 						</div>
@@ -85,7 +84,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Customer Name:</h5>
 								</div>
 								<div class="col-sm-7">
-									<h5><input type="text" class="form-control" name="customer_name" id="customer_name"></h5>
+									<h5><input type="text" class="form-control" name="customer_name" id="customer_name" required></h5>
 								</div>
 							</div>
 						</div>
@@ -123,7 +122,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Contact Person Name:</h5>
 								</div>
 								<div class="col-sm-7"> 
-									<h5><input type="text" class="form-control" name="contact_person_name" id="contact_person_name"></h5>
+									<h5><input type="text" class="form-control" name="contact_person_name" id="contact_person_name" required></h5>
 								</div>
 							</div>
 						</div>
@@ -133,7 +132,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Contact Email:</h5>
 								</div>
 								<div class="col-sm-7"> 
-									<h5><input type="email" class="form-control" placeholder="E-mail id" id="contact_email" name="contact_email"></h5>
+									<h5><input type="email" class="form-control" placeholder="E-mail id" id="contact_email" required name="contact_email"></h5>
 								</div>
 							</div>
 						</div>
@@ -206,7 +205,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>ENG/Eqp Id:</h5>
 								</div>
 								<div class="col-sm-6" >
-									<h5> <input type="text" class="form-control" name="eng_eqp_id" id="eng_eqp_id"></h5>
+									<h5> <input type="text" class="form-control" name="eng_eqp_id" id="eng_eqp_id" required></h5>
 								</div>
 							</div>
 						</div>
@@ -216,7 +215,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>ALT./MODEL:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="alt_model" id="alt_model"></h5>
+									<h5><input type="text" class="form-control" name="alt_model" id="alt_model" required></h5>
 								</div>
 							</div>
 						</div>
@@ -226,7 +225,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>RATING/KVA:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="rating_kva" id="rating_kva"></h5>
+									<h5><input type="text" class="form-control" name="rating_kva" id="rating_kva" required></h5>
 								</div>
 							</div>
 						</div>
@@ -260,7 +259,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>PANNEL/TYPE:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="pannel_type" id="pannel_type"></h5>
+									<h5><input type="text" class="form-control" name="pannel_type" id="pannel_type" required></h5>
 								</div>
 							</div>
 						</div>
