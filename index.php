@@ -91,10 +91,13 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						</div>
 						<div class="col-sm-3">
 						<div class="row">
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<h5>DJID:</h5>
 								</div>
-								<div class="col-sm-9">
+								<div class="col-sm-6">
+									<h5><input type="text" class="form-control" name="customer_name"></h5>
+								</div>
+								<div class="col-sm-3">
 									<h5><button type="button" class="btn btn-primary active" style="background-color:#154360">Search</button></h5>
 								</div>
 							</div>
