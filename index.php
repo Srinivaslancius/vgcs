@@ -71,7 +71,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>SL.NO.</h5>
 								</div>
 								<div class="col-sm-8">
-									<h5><input type="text" class="form-control" name="sl_no"></h5>
+									<h5><input type="text" class="form-control" name="sl_no" id="sl_no"></h5>
 								</div>
 							</div>
 						</div>
@@ -85,7 +85,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Customer Name:</h5>
 								</div>
 								<div class="col-sm-7">
-									<h5><input type="text" class="form-control" name="customer_name"></h5>
+									<h5><input type="text" class="form-control" name="customer_name" id="customer_name"></h5>
 								</div>
 							</div>
 						</div>
@@ -95,10 +95,10 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>DJID:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="customer_name"></h5>
+									<h5><input type="text" class="form-control" name="dj_id" id="dj_id"></h5>
 								</div>
 								<div class="col-sm-3">
-									<h5><button type="button" class="btn btn-primary active" style="background-color:#154360">Search</button></h5>
+									<h5><button type="button" class="btn btn-primary active search" style="background-color:#154360">Search</button></h5>
 								</div>
 							</div>
 						
@@ -123,7 +123,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Contact Person Name:</h5>
 								</div>
 								<div class="col-sm-7"> 
-									<h5><input type="text" class="form-control" name="contact_person_name"></h5>
+									<h5><input type="text" class="form-control" name="contact_person_name" id="contact_person_name"></h5>
 								</div>
 							</div>
 						</div>
@@ -133,7 +133,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Contact Email:</h5>
 								</div>
 								<div class="col-sm-7"> 
-									<h5><input type="email" class="form-control" placeholder="E-mail id" name="contact_email"></h5>
+									<h5><input type="email" class="form-control" placeholder="E-mail id" id="contact_email" name="contact_email"></h5>
 								</div>
 							</div>
 						</div>
@@ -143,7 +143,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>Cell:</h5>
 								</div>
 								<div class="col-sm-9">
-									<h5><input type="text" class="form-control" name="contact_mobile" required maxlength="10" pattern="[0-9]{10}" onkeypress="return isNumberKey(event)"></h5>
+									<h5><input type="text" class="form-control" name="contact_mobile" required maxlength="10" pattern="[0-9]{10}" onkeypress="return isNumberKey(event)" id="contact_mobile"></h5>
 								</div>
 							</div>
 						</div>
@@ -206,7 +206,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>ENG/Eqp Id:</h5>
 								</div>
 								<div class="col-sm-6" >
-									<h5> <input type="text" class="form-control" name="eng_eqp_id"></h5>
+									<h5> <input type="text" class="form-control" name="eng_eqp_id" id="eng_eqp_id"></h5>
 								</div>
 							</div>
 						</div>
@@ -216,7 +216,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>ALT./MODEL:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="alt_model"></h5>
+									<h5><input type="text" class="form-control" name="alt_model" id="alt_model"></h5>
 								</div>
 							</div>
 						</div>
@@ -226,7 +226,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>RATING/KVA:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="rating_kva"></h5>
+									<h5><input type="text" class="form-control" name="rating_kva" id="rating_kva"></h5>
 								</div>
 							</div>
 						</div>
@@ -260,7 +260,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>PANNEL/TYPE:</h5>
 								</div>
 								<div class="col-sm-6">
-									<h5><input type="text" class="form-control" name="pannel_type"></h5>
+									<h5><input type="text" class="form-control" name="pannel_type" id="pannel_type"></h5>
 								</div>
 							</div>
 						</div>
@@ -662,5 +662,27 @@ function isNumberKey(evt){
       if (charCode > 31 && (charCode < 48 || charCode > 57))
         return false;
     return true;
-  }
+}
+$(document).ready(function(){
+	$('.search').click(function(){
+	    var customer_name = $("#customer_name").val();
+	    var dj_id = $("#dj_id").val();
+	    $.ajax({
+          type:"post",
+          url:"get_particular_customer_data.php",
+          data:"&customer_name="+customer_name+"&dj_id="+dj_id,
+          success:function(value){
+          	var data = value.split(",");
+            $('#contact_person_name').val(data[0]);
+            $('#contact_mobile').val(data[1]);
+            $('#contact_email').val(data[2]);
+            $('#sl_no').val(data[3]);
+            $('#eng_eqp_id').val(data[4]);
+            $('#alt_model').val(data[5]);
+            $('#rating_kva').val(data[6]);
+            $('#pannel_type').val(data[7]);
+          }
+        });
+	});
+});
 </script>
