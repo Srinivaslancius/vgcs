@@ -363,7 +363,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-3" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
-									<h5>Oil Pressure<br><small>(15kg-70kg)</small></h5>
+									<h5>Oil Pressure<br><small>(1.5-7kg)</small></h5>
 								</div>
 								<div class="col-sm-6">
 									<h5><input type="text" class="form-control" name="oil_pressure"></h5>
@@ -667,22 +667,36 @@ $(document).ready(function(){
 	$('.search').click(function(){
 	    var customer_name = $("#customer_name").val();
 	    var dj_id = $("#dj_id").val();
-	    $.ajax({
-          type:"post",
-          url:"get_particular_customer_data.php",
-          data:"&customer_name="+customer_name+"&dj_id="+dj_id,
-          success:function(value){
-          	var data = value.split(",");
-            $('#contact_person_name').val(data[0]);
-            $('#contact_mobile').val(data[1]);
-            $('#contact_email').val(data[2]);
-            $('#sl_no').val(data[3]);
-            $('#eng_eqp_id').val(data[4]);
-            $('#alt_model').val(data[5]);
-            $('#rating_kva').val(data[6]);
-            $('#pannel_type').val(data[7]);
-          }
-        });
+	    if(customer_name!='' || dj_id!='') {
+
+	    	$.ajax({
+	          type:"post",
+	          url:"get_particular_customer_data.php",
+	          data:"&customer_name="+customer_name+"&dj_id="+dj_id,
+	          success:function(value){
+	          	if(value == 0) {
+	          		alert("Customer Not Exists!");
+	          	} else {
+
+	          		var data = value.split(",");
+		            $('#contact_person_name').val(data[0]);
+		            $('#contact_mobile').val(data[1]);
+		            $('#contact_email').val(data[2]);
+		            $('#sl_no').val(data[3]);
+		            $('#eng_eqp_id').val(data[4]);
+		            $('#alt_model').val(data[5]);
+		            $('#rating_kva').val(data[6]);
+		            $('#pannel_type').val(data[7]);
+	          	}
+	          	
+	          }
+	        });
+
+	    } else {
+	    	alert("Please Enter Customer Name Or DJ Id");
+	    	return false;
+	    }	    
+
 	});
 });
 </script>
