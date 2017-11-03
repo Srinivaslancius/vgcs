@@ -159,10 +159,7 @@ $content .= '<div class="container" style="padding-right:0px">
       <tr>
         <th>VGCS</th>
         <th></th>
-        <th><select class="form-control" id="sel1" name="company_name">
-              <option value="VENUS GENIE CARE SERVICES">VENUS GENIE CARE SERVICES</option>
-              <option value="MEDHA ELECTRICAL CONTRACT">MEDHA ELECTRICAL CONTRACT</option>
-          </select></th>
+        <th>VENUS GENIE CARE SERVICES</th>
         <th></th>
         <th>MOBILE:+91-9849257587<br>E-mail:venugopal.7@hotmail.com</th>        
       </tr>
@@ -226,9 +223,9 @@ $content .= '<div class="container" style="padding-right:0px">
         <td></td>
       </tr>
        <tr>
-        <td>Water Temp:' . $row['water_temp'] . '</td>
+        <td>Water Temp (10°C-98°C):' . $row['water_temp'] . '</td>
         <td>Fuel Pressure:' . $row['fuel_pressure'] . '</td>
-        <td>Oil Pressure:' . $row['oil_pressure'] . '</td>
+        <td>Oil Pressure (1.5-7kg):' . $row['oil_pressure'] . '</td>
         <td>Battery chg:' . $row['battery_change'] . '</td>
         <td></td>
       </tr>
