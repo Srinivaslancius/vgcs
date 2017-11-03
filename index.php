@@ -33,11 +33,20 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 			<div class="border-div">
 				<div class="container-fluid bottom-margin">
 					<div class="row">
-						<div class="col-sm-3">
-							<center><h3>VGCS</h3></center>
+						<div class="col-sm-4">
+							<!--<center><h3>VGCS</h3></center>-->
 						</div>
-						<div class="col-sm-6">
-							<center><h3><?php echo $getSiteSettingsData['admin_title']; ?></h3></center>
+						<div class="col-sm-4">
+						<div class="form-group">
+						  <label for="sel1"></label>
+						  <select class="form-control" id="sel1">
+							<option>SELECT ONE:</option>
+							<option>VENUS GENIE CARE SERVICES</option>
+							<option>MEDHA ELECTRICAL CONTRACT</option>
+						  </select>
+						</div>
+						</div>
+						<div class="col-sm-1">
 						</div>
 						<div class="col-sm-3">
 							<h5>MOBILE: +91-<?php echo $getSiteSettingsData['mobile']; ?></h5>
@@ -80,14 +89,23 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
-						</div>
 						<div class="col-sm-3">
-							<div class="row">
+						<div class="row">
 								<div class="col-sm-3">
-									<h5>Date:</h5>
+									<h5>DJID:</h5>
 								</div>
 								<div class="col-sm-9">
+									<h5><button type="button" class="btn btn-primary active" style="background-color:#154360">Search</button></h5>
+								</div>
+							</div>
+						
+						</div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-6">
+									<h5>DATE OF VISIT:</h5>
+								</div>
+								<div class="col-sm-6">
 									<h5><input class="form-control"placeholder="mm/dd/yyyy" id="datepicker3" name="customer_date" required></h5>
 								</div>
 							</div>
@@ -281,7 +299,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 				</div>
 				<div class="container-fluid bottom-margin">
 					<div class="row">
-						<div class="col-sm-4" style="border-right:1px solid black">
+						<div class="col-sm-6" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
 									<h5>DATE OF INFORMED:</h5>
@@ -294,25 +312,13 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4" style="border-right:1px solid black">
+						
+						<div class="col-sm-6">
 							<div class="row">
-								<div class="col-sm-6">
-									<h5>DATE OF VISIT:</h5>
-								</div>
 								<div class="col-sm-4">
-									<h5><input class="form-control"placeholder="mm/dd/yyyy" name="date_of_visit" id="datepicker2" required></h5>
-								</div>
-								<div class="col-sm-2">
-									<h5><span class="glyphicon glyphicon-time"></span></h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="row">
-								<div class="col-sm-6">
 									<h5>LOCATION:</h5>
 								</div>
-								<div class="col-sm-6"> 
+								<div class="col-sm-8"> 
 									<h5><input type="text" class="form-control" name="location"></h5>
 								</div>
 							</div>
@@ -334,7 +340,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-3" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
-									<h5>Water Temp</h5>
+									<h5>Water Temp<br><small>(10°C-98°C)</small></h5>
 								</div>
 								<div class="col-sm-6">
 									<h5><input type="text" class="form-control" name="water_temp"></h5>
@@ -354,7 +360,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-3" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
-									<h5>Oil Pressure</h5>
+									<h5>Oil Pressure<br><small>(15kg-70kg)</small></h5>
 								</div>
 								<div class="col-sm-6">
 									<h5><input type="text" class="form-control" name="oil_pressure"></h5>
