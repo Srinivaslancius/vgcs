@@ -290,11 +290,17 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						</div>
 						<div class="col-sm-4">
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-sm-3">
 									<h5>RUN/HRS:</h5>
 								</div>
-								<div class="col-sm-6">
+								<div class="col-sm-3">
 									<h5><input type="text" class="form-control" name="run_hrs"></h5>
+								</div>
+								<div class="col-sm-3">
+									<h5>Total/HRS:</h5>
+								</div>
+								<div class="col-sm-3">
+									<h5><input type="text" class="form-control" name="total_hours" id="total_hours"></h5>
 								</div>
 							</div>
 						</div>
