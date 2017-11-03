@@ -159,7 +159,10 @@ $content .= '<div class="container" style="padding-right:0px">
       <tr>
         <th>VGCS</th>
         <th></th>
-        <th>VENUS GENIE CARE SERVICES</th>
+        <th><select class="form-control" id="sel1" name="company_name">
+              <option value="VENUS GENIE CARE SERVICES">VENUS GENIE CARE SERVICES</option>
+              <option value="MEDHA ELECTRICAL CONTRACT">MEDHA ELECTRICAL CONTRACT</option>
+          </select></th>
         <th></th>
         <th>MOBILE:+91-9849257587<br>E-mail:venugopal.7@hotmail.com</th>        
       </tr>
@@ -175,9 +178,9 @@ $content .= '<div class="container" style="padding-right:0px">
       </tr>
        <tr>
         <td>Customer Name:' . $row['customer_name'] . '</td>
+        <td>DJID:' . $row['dj_id'] . '</td>
         <td>Contact Person Name:' . $row['contact_person_name'] . '</td>
         <td>Email:' . $row['contact_email'] . '</td>
-        <td></td>
         <td>Cell:' . $row['contact_mobile'] . '</td>
       </tr>
         <tr>
