@@ -293,7 +293,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5>RUN/HRS:</h5>
 								</div>
 								<div class="col-sm-3">
-									<h5><input type="text" class="form-control" name="run_hrs"></h5>
+									<h5><input type="text" class="form-control" name="run_hrs" id="run_hrs" value="0"></h5>
 								</div>
 								<div class="col-sm-3">
 									<h5>Total/HRS:</h5>
@@ -703,5 +703,12 @@ $(document).ready(function(){
 	    }	    
 
 	});
+
+	$("#total_hours").blur(function(){
+		var total = $("#total_hours").val();
+		var run_hrs = $("#run_hrs").val();			
+	    $("#run_hrs").val(total - run_hrs);
+	}); 
+
 });
 </script>
