@@ -118,6 +118,11 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                           <div class="modal-body" id="modal_body">
                             <div class="row">
                               <div class="col-sm-2"></div>
+                              <div class="col-sm-4">Company Name:</div>
+                              <div class="col-sm-6"><?php echo $row['company_name'];?></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-2"></div>
                               <div class="col-sm-4">Serial Number:</div>
                               <div class="col-sm-6"><?php echo $row['sl_no'];?></div>
                             </div>
@@ -125,6 +130,11 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Report Type:</div>
                               <div class="col-sm-6"><?php echo $row['report_type'];?></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-2"></div>
+                              <div class="col-sm-4">EQID:</div>
+                              <div class="col-sm-6"><?php echo $row['dj_id'];?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
@@ -181,28 +191,13 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">PM/DATE:</div>
-                              <div class="col-sm-6"><?php echo $row['pm_date'];?></div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-2"></div>
-                              <div class="col-sm-4">PM/TYPE:</div>
-                              <div class="col-sm-6"><?php echo $row['pm_type'];?></div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-2"></div>
                               <div class="col-sm-4">RUN/HRS:</div>
                               <div class="col-sm-6"><?php echo $row['run_hrs'];?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">DATE OF INFORMED:</div>
-                              <div class="col-sm-6"><?php echo $row['date_of_informed'];?></div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-2"></div>
                               <div class="col-sm-4">DATE OF VISIT:</div>
-                              <div class="col-sm-6"><?php echo $row['date_of_visit'];?></div>
+                              <div class="col-sm-6"><?php echo $row['date_of_informed'];?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
