@@ -142,24 +142,24 @@ padding-left:0px;
 margin-bottom:50px;
 }
 th, td {
-    text-align: left;
-    border-bottom:1px solid gray;
-    }
-    
-    th{
-    background-color:#d8d8d8;
-    text-align:center;
-    }
-    </style>';
+text-align: left;
+border-bottom:1px solid gray;
+}
+
+th{
+background-color:#d8d8d8;
+text-align:center;
+}
+</style>';
 
 
 $content .= '<div class="container" style="padding-right:0px">         
   <table class="table">
     <thead>
       <tr>
-        <th>VGCS</th>
         <th></th>
-        <th>VENUS GENIE CARE SERVICES</th>
+        <th></th>
+        <th>' . $row['company_name'] . '</th>
         <th></th>
         <th>MOBILE:+91-9849257587<br>E-mail:venugopal.7@hotmail.com</th>        
       </tr>
@@ -175,7 +175,7 @@ $content .= '<div class="container" style="padding-right:0px">
       </tr>
        <tr>
         <td>Customer Name:' . $row['customer_name'] . '</td>
-        <td>DJID:' . $row['dj_id'] . '</td>
+        <td>EQID:' . $row['dj_id'] . '</td>
         <td>Contact Person Name:' . $row['contact_person_name'] . '</td>
         <td>Email:' . $row['contact_email'] . '</td>
         <td>Cell:' . $row['contact_mobile'] . '</td>
@@ -202,16 +202,16 @@ $content .= '<div class="container" style="padding-right:0px">
         <td>PANNEL/TYPE:' . $row['pannel_type'] . '</td>
       </tr>
        <tr>
-        <td>PM/DATE:' . $row['pm_date'] . '</td>
         <td></td>
-        <td>PM/TYPE:' . $row['pm_type'] . '</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td>RUN/HRS:' . $row['run_hrs'] . '</td>
       </tr>
       <tr>
-        <td>DATE OF INFORMED:' . $row['date_of_informed'] . '</td>
+        <td>DATE OF VISIT:' . $row['date_of_informed'] . '</td>
         <td></td>
-        <td>DATE OF VISIT:' . $row['date_of_visit'] . '</td>
+        <td></td>
         <td></td>
         <td>LOCATION:' . $row['location'] . '</td>
       </tr>

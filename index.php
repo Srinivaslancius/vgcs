@@ -91,7 +91,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-3">
 						<div class="row">
 								<div class="col-sm-2">
-									<h5>DJID:</h5>
+									<h5>EQID:</h5>
 								</div>
 								<div class="col-sm-6">
 									<h5><input type="text" class="form-control" name="dj_id" id="dj_id"></h5>
@@ -267,7 +267,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 				</div>
 				<div class="container-fluid bottom-margin">
 					<div class="row">
-						<div class="col-sm-4" style="border-right:1px solid black">
+						<!-- <div class="col-sm-4" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
 								<h5>PM/DATE:</h5>
@@ -286,7 +286,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 									<h5><input type="text" class="form-control" name="pm_type"></h5>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-sm-4">
 							<div class="row">
 								<div class="col-sm-3">
@@ -310,7 +310,7 @@ $getSiteSettingsData  = $getData->fetch_assoc();
 						<div class="col-sm-6" style="border-right:1px solid black">
 							<div class="row">
 								<div class="col-sm-6">
-									<h5>DATE OF INFORMED:</h5>
+									<h5>DATE OF VISIT:</h5>
 								</div>
 								<div class="col-sm-4">
 									<h5><input class="form-control"placeholder="mm/dd/yyyy" name="date_of_informed" id="datepicker" required></h5>
