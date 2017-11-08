@@ -114,6 +114,7 @@ else {
  $content .= '
      <style>
   .container{
+border:2px solid gray;
 width:970px;
 padding-left:0px;
 margin-bottom:50px;
@@ -124,6 +125,7 @@ th, td {
   font-size:14px;
   padding-right:0px;
   font-weight:600;
+  border-bottom:1px solid gray;
   color:#15317E;
   } 
   th{
@@ -137,6 +139,7 @@ font-size: smaller;
 
 .table>thead>tr>th {
     vertical-align: bottom;
+    border-bottom: 1px solid gray;
    padding:0px;
    }
 
@@ -243,7 +246,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
       </tr>
     <tr colspan="6">
         <td style="border-right:1px solid gray">ENG/Eqp Id :</td>
-    <td style="border-right:1px solid gray;color:black">' . $row['eng_eqp_id'] . '</td>
+    <td style="border-right:1px solid gray;border-left:1px solid gray;color:black">' . $row['eng_eqp_id'] . '</td>
         <td style="border-right:1px solid gray">ALT./MODEL:</td>
     <td style="border-right:1px solid gray;color:black">' . $row['alt_model'] . '</td>
         <td>RATING/KVA :</td>
@@ -252,7 +255,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
       </tr>
     <tr>
         <td style="border-right:1px solid gray">ENG/SI.No :</td>
-    <td style="border-right:1px solid gray;color:black">' . $row['eng_sl_no'] . '</td>
+    <td style="border-right:1px solid gray;border-left:1px solid gray;color:black">' . $row['eng_sl_no'] . '</td>
         <td style="border-right:1px solid gray">ALT./SI.No :</td>
     <td style="border-right:1px solid gray;color:black">' . $row['alt_sl_no'] . '</td>
         <td>PANNEL/TYPE:</td>
@@ -275,7 +278,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <td></td>
       </tr>
      <tr>
-        <td style="border-right:1px solid gray">Water Temp<br><small>(10째C-98째C)</small></td>
+        <td style="border-right:1px solid gray">Water Temp<br><small>(10°C-98°C)</small></td>
      <td style="border-right:1px solid gray;color:black">' . $row['water_temp'] . '</td>
     <td style="border-right:1px solid gray">Oil Temp</td>
     <td style="border-right:1px solid gray;color:black">' . $row['fuel_pressure'] . '</td>
@@ -416,6 +419,7 @@ $body .= "--" . $separator . "--";
 if (mail($to, $subject, $body, $headers)) {
 
     header("Location: thank_you.php?id=".$id."");
+    echo $msgsuccess = 'Mail Send Successfully'; die;
 } else {
 
     $msgerror = 'Main not send';
