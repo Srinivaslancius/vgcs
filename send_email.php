@@ -294,6 +294,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
      <td style="border-right:1px solid gray">' . $row['load_in_amps'] . '</td>       
       </tr>
     
+    <tr>
     <td style="border-right:1px solid gray">Battery chg</td>
      <td style="border-right:1px solid gray">' . $row['battery_change'] . '</td>
     <td></td>
