@@ -275,7 +275,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <td></td>
       </tr>
      <tr>
-        <td style="border-right:1px solid gray">Water Temp<br><small>(10°C-98°C)</small></td>
+        <td style="border-right:1px solid gray">Water Temp<br><small>(10째C-98째C)</small></td>
      <td style="border-right:1px solid gray;color:black">' . $row['water_temp'] . '</td>
     <td style="border-right:1px solid gray">Oil Temp</td>
     <td style="border-right:1px solid gray;color:black">' . $row['fuel_pressure'] . '</td>
@@ -319,7 +319,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
      <tr>
         <td style="border-right:1px solid gray" colspan="2">Check Coolent / Condition :<span style="color:black">' . $check_coolent_condition . '</span></td>    
         <td style="border-right:1px solid gray" colspan="2">Check if any / Leakages :<span style="color:black">' . $check_leakages. '</span></td>  
-        <td colspan="2">Check Valve Injector / Adjust :<span style="color:black">' . $check_valve_injector . '</td>
+        <td colspan="2">Check Valve Injector / Adjust :<span style="color:black">' . $check_valve_injector . '</span></td>
       </tr>
      <tr>
         <td style="border-right:1px solid gray" colspan="2">Check Battery / Condition :<span style="color:black">' . $check_battery_condition . '</span></td>
@@ -416,7 +416,6 @@ $body .= "--" . $separator . "--";
 if (mail($to, $subject, $body, $headers)) {
 
     header("Location: thank_you.php?id=".$id."");
-    echo $msgsuccess = 'Mail Send Successfully'; die;
 } else {
 
     $msgerror = 'Main not send';

@@ -5,7 +5,7 @@ include "manage_webmaster/admin_includes/common_functions.php";
 //echo "<pre>"; print_r($_REQUEST); die;
 $customer_name = $_POST['customer_name'];
 $dj_id = $_POST['dj_id'];
-$sql = "SELECT * FROM service_form WHERE customer_name = '$customer_name' OR dj_id = '$dj_id' ORDER BY id DESC";
+echo $sql = "SELECT * FROM service_form WHERE customer_name = '$customer_name' AND dj_id = '$dj_id' ORDER BY id DESC"; die;
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $contact_person_name = $row['contact_person_name'];
