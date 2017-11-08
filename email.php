@@ -19,17 +19,10 @@ include "manage_webmaster/admin_includes/config.php";
       $rating_kva = $_POST['rating_kva'];
       $eng_sl_no = $_POST['eng_sl_no'];
       $alt_sl_no = $_POST['alt_sl_no'];
-      $pannel_type = $_POST['pannel_type'];
-      $pm_date = $_POST['pm_date'];
-      $pm_type = $_POST['pm_type'];                                 
+      $pannel_type = $_POST['pannel_type'];                          
       $run_hrs = $_POST['run_hrs'];
       $date_inf = date_create($_POST['date_of_informed']);
       $date_of_informed = date_format($date_inf,"Y-m-d");
-
-      $date_vsrt = date_create($_POST['date_of_visit']);
-      $date_of_visit = date_format($date_vsrt,"Y-m-d");
-
-      
       $location = $_POST['location'];
       $visit_checklist_type = $_POST['visit_checklist_type'];
       $water_temp = $_POST['water_temp'];
@@ -62,7 +55,7 @@ include "manage_webmaster/admin_includes/config.php";
       //End checkbox list
       $created_at = date("Y-m-d h:i:s");
 
-      $sql = "INSERT INTO service_form (`report_type`,`dj_id`,`company_name`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` ,`pannel_type` , `pm_date` , `pm_type` , `run_hrs` , `date_of_informed` ,`date_of_visit`,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`,`created_at`) VALUES ('$report_type','$dj_id','$company_name','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pannel_type','$pm_date','$pm_type','$run_hrs','$date_of_informed','$date_of_visit','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds','$created_at')";
+      $sql = "INSERT INTO service_form (`report_type`,`dj_id`,`company_name`,`sl_no`,`customer_name`,`customer_date` ,`contact_person_name` ,`contact_email` , `contact_mobile`,`visiting_type` ,`eng_eqp_id` , `alt_model`, `rating_kva`, `eng_sl_no` ,`alt_sl_no` ,`pannel_type` , `run_hrs` , `date_of_informed` ,`location`,`visit_checklist_type`,`water_temp`,`fuel_pressure`,`oil_pressure`,`battery_change`,`speed_freq`,`load_in_kw`,`load_in_amps`,`voltage`,`amc_visit_check_list_comments`,`failure_details`,`cause_of_failure`,`work_carried_out`,`customer_comments`,`check_oil_level_condition`,`check_radiator_condition`,`check_breather_clean`,`check_fuel_condition`,`check_drive_belts_condition`,`check_air_filters_clean`,`check_coolent_condition`,`check_leakages`,`check_valve_injector`,`check_battery_condition`,`start_check_exhaust_smoke`,`start_check_abnormal_sounds`,`created_at`) VALUES ('$report_type','$dj_id','$company_name','$sl_no','$customer_name','$customer_date','$contact_person_name','$contact_email','$contact_mobile','$visiting_type','$eng_eqp_id','$alt_model','$rating_kva','$eng_sl_no','$alt_sl_no','$pannel_type','$run_hrs','$date_of_informed','$location','$visit_checklist_type','$water_temp','$fuel_pressure','$oil_pressure','$battery_change','$speed_freq','$load_in_kw','$load_in_amps','$voltage','$amc_visit_check_list_comments','$failure_details','$cause_of_failure','$work_carried_out','$customer_comments','$check_oil_level_condition','$check_radiator_condition','$check_breather_clean','$check_fuel_condition','$check_drive_belts_condition','$check_air_filters_clean','$check_coolent_condition','$check_leakages','$check_valve_injector','$check_battery_condition','$start_check_exhaust_smoke','$start_check_abnormal_sounds','$created_at')";
       if($conn->query($sql) == TRUE)
       {
         $last_id = $conn->insert_id;
