@@ -304,7 +304,7 @@ $(document).ready(function(){
 	$('.search').click(function(){
 	    var customer_name = $("#customer_name").val();
 	    var dj_id = $("#dj_id").val();
-	    if(customer_name!='' || dj_id!='') {
+	    if(customer_name!='' && dj_id!='') {
 
 	    	$.ajax({
 	          type:"post",
@@ -333,7 +333,7 @@ $(document).ready(function(){
 	        });
 
 	    } else {
-	    	alert("Please Enter Customer Name Or DJ Id");
+	    	alert("Please Enter Customer Name AND DJ Id");
 	    	return false;
 	    }	    
 
