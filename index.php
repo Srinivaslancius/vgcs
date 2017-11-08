@@ -211,6 +211,7 @@ color:#15317E;
 		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="load_in_amps" style="width:70px"></td>       
       </tr>
 	  
+	  <tr>
 	  <td style="border-right:1px solid gray">Battery chg</td>
 		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="battery_change" style="width:70px"></td>
 		<td></td>

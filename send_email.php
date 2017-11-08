@@ -114,7 +114,6 @@ else {
  $content .= '
      <style>
   .container{
-border:2px solid gray;
 width:970px;
 padding-left:0px;
 margin-bottom:50px;
@@ -125,7 +124,6 @@ th, td {
   font-size:14px;
   padding-right:0px;
   font-weight:600;
-  border-bottom:1px solid gray;
   color:#15317E;
   } 
   th{
@@ -139,7 +137,6 @@ font-size: smaller;
 
 .table>thead>tr>th {
     vertical-align: bottom;
-     border-bottom: 1px solid gray;
    padding:0px;
    }
 
@@ -190,7 +187,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <th>
     <img src="vgcs1.png"></th>
     
-        <th colspan="3" style="padding-left:40px"><div class="form-group">
+        <th colspan="3" style="font-size:25px;padding-left:40px"><div class="form-group">
               ' . $row['company_name'] . '
             </div></th>
             
@@ -200,45 +197,45 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
     <tbody>
       <tr>
         <td>REPORT TYPE:</td>
-        <td style="text-align:center">'.$report_type.'</td>
-     <td style="text-align:center" colspan="2"></td>
+        <td style="color:black" colspan="2">'.$report_type.'</td>
+     <td style="text-align:center" ></td>
     <td style="text-align:center">SL.NO.</td>
-    <td>' . $row['sl_no'] . '</td>
+    <td style="color:black">' . $row['sl_no'] . '</td>
       </tr>
     <tr>
   <td>DATE OF INFORMED :</td>
-        <td>' . $row['customer_date'] . '</td>
+        <td style="color:black">' . $row['customer_date'] . '</td>
     <td></td>
     
     <td style="text-align:center">DATE OF VISIT :</td>
-    <td>' . $row['date_of_informed'] . '</td>
+    <td style="color:black">' . $row['date_of_informed'] . '</td>
     <td></td>
     
     
       </tr>
        <tr>
         <td>Customer Name :</td>
-        <td>' . $row['customer_name'] . '</td>
+        <td style="color:black">' . $row['customer_name'] . '</td>
         <td style="text-align:center">EQID :</td>
-    <td>
+    <td style="color:black">
       ' . $row['dj_id'] . '
     </td>
     <td style="text-align:center">Location :</td>
-    <td>' . $row['location'] . '</td>
+    <td style="color:black">' . $row['location'] . '</td>
       </tr>
     
      <tr>
         <td>Contact Person Name :</td>
-        <td>' . $row['contact_person_name'] . '</td>
+        <td style="color:black">' . $row['contact_person_name'] . '</td>
         <td style="text-align:center">E-mail :</td>
-    <td>' . $row['contact_email'] . '</td>
+    <td style="color:black">' . $row['contact_email'] . '</td>
     <td style="text-align:center">Cell :</td>
-    <td>' . $row['contact_mobile'] . '</td>
+    <td style="color:black">' . $row['contact_mobile'] . '</td>
       </tr>
     
       <tr>
         <td>VISIT TYPE :</td>
-        <td colspan="2">' . $row['visiting_type'] . '</td>
+        <td colspan="2" style="color:black">' . $row['visiting_type'] . '</td>
         <td></td>
     <td></td>
     <td></td>
@@ -246,24 +243,24 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
       </tr>
     <tr colspan="6">
         <td style="border-right:1px solid gray">ENG/Eqp Id :</td>
-    <td style="border-right:1px solid gray;border-left:1px solid gray">' . $row['eng_eqp_id'] . '</td>
+    <td style="border-right:1px solid gray;color:black">' . $row['eng_eqp_id'] . '</td>
         <td style="border-right:1px solid gray">ALT./MODEL:</td>
-    <td style="border-right:1px solid gray">' . $row['alt_model'] . '</td>
+    <td style="border-right:1px solid gray;color:black">' . $row['alt_model'] . '</td>
         <td>RATING/KVA :</td>
-    <td style="border-left:1px solid gray;">' . $row['rating_kva'] . '</td>
+    <td style="border-left:1px solid gray;color:black">' . $row['rating_kva'] . '</td>
     
       </tr>
     <tr>
         <td style="border-right:1px solid gray">ENG/SI.No :</td>
-    <td style="border-right:1px solid gray;border-left:1px solid gray">' . $row['eng_sl_no'] . '</td>
+    <td style="border-right:1px solid gray;color:black">' . $row['eng_sl_no'] . '</td>
         <td style="border-right:1px solid gray">ALT./SI.No :</td>
-    <td style="border-right:1px solid gray">' . $row['alt_sl_no'] . '</td>
+    <td style="border-right:1px solid gray;color:black">' . $row['alt_sl_no'] . '</td>
         <td>PANNEL/TYPE:</td>
-    <td style="border-left:1px solid gray;">' . $row['pannel_type'] . '</td>
+    <td style="border-left:1px solid gray;"color:black">' . $row['pannel_type'] . '</td>
       </tr>
      <tr>
         <td style="border-right:1px solid gray;">RUN/HRS :</td>
-    <td style="border-right:1px solid gray;">' . $row['run_hrs'] . '</td>
+    <td style="border-right:1px solid gray;color:black">' . $row['run_hrs'] . '</td>
     <td></td>
      <td></td>
      <td></td>
@@ -273,85 +270,85 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
       </tr>
     <tr>
         <td colspan="2">VISIT CHECK LIST:</td>
-    <td colspan="2">' . $row['visit_checklist_type'] . '</td>
+    <td colspan="2" style="color:black">' . $row['visit_checklist_type'] . '</td>
     <td></td>
         <td></td>
       </tr>
      <tr>
         <td style="border-right:1px solid gray">Water Temp<br><small>(10°C-98°C)</small></td>
-     <td style="border-right:1px solid gray">' . $row['water_temp'] . '</td>
+     <td style="border-right:1px solid gray;color:black">' . $row['water_temp'] . '</td>
     <td style="border-right:1px solid gray">Oil Temp</td>
-    <td style="border-right:1px solid gray">' . $row['fuel_pressure'] . '</td>
+    <td style="border-right:1px solid gray;color:black">' . $row['fuel_pressure'] . '</td>
         <td style="border-right:1px solid gray">Oil Pressure<br><small>(1.5kg-7kg)</small></td>
-    <td style="border-right:1px solid gray">' . $row['oil_pressure'] . '</td>
+    <td style="color:black">' . $row['oil_pressure'] . '</td>
       </tr>
      <tr>
         <td style="border-right:1px solid gray">Speed/Freq</td>
-     <td style="border-right:1px solid gray">' . $row['speed_freq'] . '</td>
+     <td style="border-right:1px solid gray;color:black">' . $row['speed_freq'] . '</td>
     <td style="border-right:1px solid gray">Load in kw</td>
-     <td style="border-right:1px solid gray">' . $row['load_in_kw'] . '</td>
+     <td style="border-right:1px solid gray;color:black">' . $row['load_in_kw'] . '</td>
         <td style="border-right:1px solid gray">Load in AMPS</td>
-     <td style="border-right:1px solid gray">' . $row['load_in_amps'] . '</td>       
+     <td style="color:black">' . $row['load_in_amps'] . '</td>       
       </tr>
     
     <tr>
     <td style="border-right:1px solid gray">Battery chg</td>
-     <td style="border-right:1px solid gray">' . $row['battery_change'] . '</td>
+     <td style="border-right:1px solid gray;color:black">' . $row['battery_change'] . '</td>
     <td></td>
      <td style="border-right:1px solid gray"></td>
         <td style="border-right:1px solid gray">Voltage</td>
-     <td style="border-right:1px solid gray">' . $row['voltage'] . '</td>      
+     <td style="color:black">' . $row['voltage'] . '</td>      
       </tr>
     
     <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Oil level / Condition :' . $check_oil_level_condition . '</td>
+        <td style="border-right:1px solid gray" colspan="2">Check Oil level / Condition :<span style="color:black">' . $check_oil_level_condition . '</span></td>
   
-        <td style="border-right:1px solid gray;"colspan="2">Check Radiator all Houses/Condition :' . $check_radiator_condition . '</td>
+        <td style="border-right:1px solid gray;"colspan="2">Check Radiator all Houses/Condition :<span style="color:black">' . $check_radiator_condition . '</span></td>
     
-        <td colspan="2">Check Breather / Clean :' . $check_breather_clean . '</td>
-    
-      </tr>
-     <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Fuel / Condition :' . $check_fuel_condition. '</td>
-    
-        <td style="border-right:1px solid gray" colspan="2">Check Drive Belts / Condition :' . $check_drive_belts_condition . '</td>
-    
-        <td colspan="2">Check Air Filters / Clean :' . $check_air_filters_clean . '</td>
+        <td colspan="2">Check Breather / Clean :<span style="color:black">' . $check_breather_clean . '</span></td>
     
       </tr>
      <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Coolent / Condition :' . $check_coolent_condition . '</td>    
-        <td style="border-right:1px solid gray" colspan="2">Check if any / Leakages :' . $check_leakages. '</td>  
-        <td colspan="2">Check Valve Injector / Adjust :' . $check_valve_injector . '</td>
+        <td style="border-right:1px solid gray" colspan="2">Check Fuel / Condition :<span style="color:black">' . $check_fuel_condition. '</span></td>
+    
+        <td style="border-right:1px solid gray" colspan="2">Check Drive Belts / Condition :<span style="color:black">' . $check_drive_belts_condition . '</span></td>
+    
+        <td colspan="2">Check Air Filters / Clean :<span style="color:black">' . $check_air_filters_clean . '</span></td>
+    
       </tr>
      <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Battery / Condition :' . $check_battery_condition . '</td>
+        <td style="border-right:1px solid gray" colspan="2">Check Coolent / Condition :<span style="color:black">' . $check_coolent_condition . '</span></td>    
+        <td style="border-right:1px solid gray" colspan="2">Check if any / Leakages :<span style="color:black">' . $check_leakages. '</span></td>  
+        <td colspan="2">Check Valve Injector / Adjust :<span style="color:black">' . $check_valve_injector . '</td>
+      </tr>
+     <tr>
+        <td style="border-right:1px solid gray" colspan="2">Check Battery / Condition :<span style="color:black">' . $check_battery_condition . '</span></td>
     
-        <td style="border-right:1px solid gray" colspan="2">Start Check Exhaust Smoke/Limits :' . $start_check_exhaust_smoke . '</td>
+        <td style="border-right:1px solid gray" colspan="2">Start Check Exhaust Smoke/Limits :<span style="color:black">' . $start_check_exhaust_smoke . '</span></td>
   
-        <td colspan="2">Start Check Abnormal Sounds/Observe :' . $start_check_abnormal_sounds. '</td>
+        <td colspan="2">Start Check Abnormal Sounds/Observe :<span style="color:black">' . $start_check_abnormal_sounds. '</span></td>
     
       </tr>
     <tr>
     <td>AMC VISIT CHECK LIST Comments if any :</td>
-        <td colspan="5">' . $row['amc_visit_check_list_comments'] . '</td>    
+        <td colspan="5" style="color:black">' . $row['amc_visit_check_list_comments'] . '</td>    
       </tr>
     <tr >
      <td>FAILURE DETAILS :</td>
-        <td colspan="5" >' . $row['failure_details'] . '</td>
+        <td colspan="5" style="color:black">' . $row['failure_details'] . '</td>
       </tr>
      <tr>
      <td>CAUSE OF FAILURE :</td>
-        <td colspan="5">' . $row['cause_of_failure'] . '</td>
+        <td colspan="5" style="color:black">' . $row['cause_of_failure'] . '</td>
       </tr>
      <tr>
       <td>WORK CARRIED OUT :</td>
-        <td colspan="5">' . $row['work_carried_out'] . '</td>
+        <td colspan="5" style="color:black">' . $row['work_carried_out'] . '</td>
     
       </tr>
      <tr>
      <td>CUSTOMER COMMENTS :</td>
-        <td colspan="5">' . $row['customer_comments'] . '</td>
+        <td colspan="5" style="color:black">' . $row['customer_comments'] . '</td>
       </tr>
   
     <tr>
