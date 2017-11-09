@@ -133,7 +133,7 @@ color:#15317E;
 		<td>
 			<form class="form-inline">
 			<div class="input-group">
-			<input type="text" class="form-control" name="dj_id" id="dj_id" size="15">
+			<input type="text" class="form-control" name="dj_id" id="dj_id" size="15" required>
 			<div class="input-group-btn">
 			<button type="button" class="btn btn-primary search">Search</button>
 			</div>
@@ -304,7 +304,7 @@ $(document).ready(function(){
 	$('.search').click(function(){
 	    var customer_name = $("#customer_name").val();
 	    var dj_id = $("#dj_id").val();
-	    if(customer_name!='' && dj_id!='') {
+	    if(customer_name!='' || dj_id!='') {
 
 	    	$.ajax({
 	          type:"post",
@@ -333,7 +333,7 @@ $(document).ready(function(){
 	        });
 
 	    } else {
-	    	alert("Please Enter Customer Name AND DJ Id");
+	    	alert("Please Enter Customer Name Or DJ Id");
 	    	return false;
 	    }	    
 
