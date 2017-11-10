@@ -77,7 +77,7 @@
 			<h3 style="margin-bottom:100px"><b>MEDHA ELECTRICAL CONTRACT</b></h3>
 			<center><a href="service_form.php" class="btn btn-primary btn-lg">Service Form</a>
 			
-			<a target="_blank" href="manage_webmaster/dashboard.php" class="btn btn-primary btn-lg">Admin Panel</a></center>
+			<a target="_blank" href="manage_webmaster/index.php" class="btn btn-primary btn-lg">Admin Panel</a></center>
 			
 		</div>
 		<div class="container footer">
