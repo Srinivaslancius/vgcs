@@ -111,6 +111,7 @@ else {
     $visit_checklist_type = 'SERVICE VISIT CHECK LIST ';    
 }
 
+$content .='<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">';
  $content .= '
      <style>
   .container{
@@ -278,7 +279,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <td></td>
       </tr>
      <tr>
-        <td style="border-right:1px solid gray">Water Temp<br><small>(10°C-98°C)</small></td>
+        <td style="border-right:1px solid gray">Water Temp<br><small>(10째C-98째C)</small></td>
      <td style="border-right:1px solid gray;color:black">' . $row['water_temp'] . '</td>
     <td style="border-right:1px solid gray">Oil Temp</td>
     <td style="border-right:1px solid gray;color:black">' . $row['fuel_pressure'] . '</td>
@@ -394,6 +395,7 @@ $attachment = chunk_split(base64_encode($pdfdoc));
 
 
 $headers = "From: " . $from . $eol;
+$headers .= "Cc: venugopal.7@hotmail.com" . $eol;
 $headers .= "MIME-Version: 1.0" . $eol;
 $headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . $eol . $eol;
 
