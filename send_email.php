@@ -120,19 +120,25 @@ border:2px solid gray;
 width:970px;
 padding-left:0px;
 margin-bottom:50px;
-height:925px;
+}
+.table{
+-moz-height:1280px !important;
+-webkit-height:1200px !important;
+margin-right:30px;
 }
 th, td {
     text-align:left;
-  font-size:14px;
+  font-size:15px;
   padding-right:0px;
   font-weight:600;
   border-bottom:1px solid gray;
   color:#15317E;
+  padding:10px;
   } 
   th{
   text-align:center;
   font-size:15px;
+  padding:10px;
   }
   
 .form-control{
@@ -141,7 +147,7 @@ font-size: smaller;
 
 .table>thead>tr>th {
     vertical-align: bottom;
-    border-bottom: 1px solid gray;
+     border-bottom: 1px solid gray;
    padding:0px;
    }
 
@@ -192,11 +198,9 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <th>
     <img src="vgcs1.png"></th>
     
-        <th colspan="3" style="font-size:25px;padding-left:40px"><div class="form-group">
-              ' . $row['company_name'] . '
-            </div></th>
+        <th colspan="3" style="font-size:20px; font-weight:bold; padding-top:30px;">' . $row['company_name'] . '</th>
             
-        <th style="padding-top:20px; padding-left:110px"colspan="2">Mobile:+91-9849257587<br>Mail:venugopal.7@hotmail.com</th>    
+        <th style="padding-top:20px; padding-left:80px"colspan="2">Mobile:+91-9849257587<br>Mail:venugopal.7@hotmail.com</th>    
       </tr>
     </thead>
     <tbody>
@@ -212,10 +216,8 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <td style="color:black">' . $row['customer_date'] . '</td>
     <td></td>
     
-    <td style="text-align:center">DATE OF VISIT :</td>
+    <td colspan="2" style="padding-left:150px">DATE OF VISIT :</td>
     <td style="color:black">' . $row['date_of_informed'] . '</td>
-    <td></td>
-    
     
       </tr>
        <tr>
@@ -226,14 +228,14 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
       ' . $row['dj_id'] . '
     </td>
     <td style="text-align:center">Location :</td>
-    <td style="color:black">' . $row['location'] . '</td>
+    <td style="color:black">' . wordwrap( $row['location'],15,"<br>\n" ) .'</td>
       </tr>
     
      <tr>
         <td>Contact Person Name :</td>
-        <td style="color:black">' . $row['contact_person_name'] . '</td>
+        <td style="color:black">' . wordwrap( $row['contact_person_name'],15,"<br>\n" ) . '</td>
         <td style="text-align:center">E-mail :</td>
-    <td style="color:black">' . $row['contact_email'] . '</td>
+    <td style="color:black">' . wordwrap($row['contact_email'],15,"<br>\n") . '</td>
     <td style="text-align:center">Cell :</td>
     <td style="color:black">' . $row['contact_mobile'] . '</td>
       </tr>
@@ -261,7 +263,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
         <td style="border-right:1px solid gray">ALT./SI.No :</td>
     <td style="border-right:1px solid gray;color:black">' . $row['alt_sl_no'] . '</td>
         <td>PANNEL/TYPE:</td>
-    <td style="border-left:1px solid gray;"color:black">' . $row['pannel_type'] . '</td>
+    <td style="border-left:1px solid gray;color:black">' . $row['pannel_type'] . '</td>
       </tr>
      <tr>
         <td style="border-right:1px solid gray;">RUN/HRS :</td>
@@ -306,61 +308,62 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
       </tr>
     
     <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Oil level / Condition :<span style="color:black">' . $check_oil_level_condition . '</span></td>
+        <td style="border-right:1px solid gray" >Check Oil level / Condition :<span style="color:black">' . $check_oil_level_condition . '</span></td>
   
-        <td style="border-right:1px solid gray;"colspan="2">Check Radiator all Houses/Condition :<span style="color:black">' . $check_radiator_condition . '</span></td>
+        <td style="border-right:1px solid gray;"colspan="3">Check Radiator all Houses/Condition :<span style="color:black">' . $check_radiator_condition . '</span></td>
     
         <td colspan="2">Check Breather / Clean :<span style="color:black">' . $check_breather_clean . '</span></td>
     
       </tr>
      <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Fuel / Condition :<span style="color:black">' . $check_fuel_condition. '</span></td>
+        <td style="border-right:1px solid gray" >Check Fuel / Condition :<span style="color:black">' . $check_fuel_condition. '</span></td>
     
-        <td style="border-right:1px solid gray" colspan="2">Check Drive Belts / Condition :<span style="color:black">' . $check_drive_belts_condition . '</span></td>
+        <td style="border-right:1px solid gray" colspan="3">Check Drive Belts / Condition :<span style="color:black">' . $check_drive_belts_condition . '</span></td>
     
         <td colspan="2">Check Air Filters / Clean :<span style="color:black">' . $check_air_filters_clean . '</span></td>
     
       </tr>
      <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Coolent / Condition :<span style="color:black">' . $check_coolent_condition . '</span></td>    
-        <td style="border-right:1px solid gray" colspan="2">Check if any / Leakages :<span style="color:black">' . $check_leakages. '</span></td>  
+        <td style="border-right:1px solid gray" >Check Coolent / Condition :<span style="color:black">' . $check_coolent_condition . '</span></td>    
+        <td style="border-right:1px solid gray" colspan="3">Check if any / Leakages :<span style="color:black">' . $check_leakages. '</span></td>  
         <td colspan="2">Check Valve Injector / Adjust :<span style="color:black">' . $check_valve_injector . '</span></td>
       </tr>
      <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Battery / Condition :<span style="color:black">' . $check_battery_condition . '</span></td>
+        <td style="border-right:1px solid gray" >Check Battery / Condition :<span style="color:black">' . $check_battery_condition . '</span></td>
     
-        <td style="border-right:1px solid gray" colspan="2">Start Check Exhaust Smoke/Limits :<span style="color:black">' . $start_check_exhaust_smoke . '</span></td>
+        <td style="border-right:1px solid gray" colspan="3">Start Check Exhaust Smoke/Limits :<span style="color:black">' . $start_check_exhaust_smoke . '</span></td>
   
         <td colspan="2">Start Check Abnormal Sounds/Observe :<span style="color:black">' . $start_check_abnormal_sounds. '</span></td>
     
       </tr>
     <tr>
     <td>AMC VISIT CHECK LIST Comments if any :</td>
-        <td colspan="5" style="color:black">' . $row['amc_visit_check_list_comments'] . '</td>    
+        <td colspan="5" style="color:black">' . wordwrap($row['amc_visit_check_list_comments'],110,"<br>\n") . '</td>    
       </tr>
     <tr >
      <td>FAILURE DETAILS :</td>
-        <td colspan="5" style="color:black">' . $row['failure_details'] . '</td>
+        <td colspan="5" style="color:black">' . wordwrap($row['failure_details'],110,"<br>\n") . '</td>
       </tr>
      <tr>
      <td>CAUSE OF FAILURE :</td>
-        <td colspan="5" style="color:black">' . $row['cause_of_failure'] . '</td>
+        <td colspan="5" style="color:black">' . wordwrap($row['cause_of_failure'],110,"<br>\n") . '</td>
       </tr>
      <tr>
       <td>WORK CARRIED OUT :</td>
-        <td colspan="5" style="color:black">' . $row['work_carried_out'] . '</td>
+        <td colspan="5" style="color:black">' . wordwrap($row['work_carried_out'],110,"<br>\n") . '</td>
     
       </tr>
      <tr>
      <td>CUSTOMER COMMENTS :</td>
-        <td colspan="5" style="color:black">' . $row['customer_comments'] . '</td>
+        <td colspan="5" style="color:black">' . wordwrap($row['customer_comments'],110,"<br>\n") . '</td>
       </tr>
   
     <tr>
-    <td colspan="6">Note: Above uploaded details which we have taken from the equipment displayed parameters.</td>
+    <td colspan="6" style="border-bottom:0px">Note: Above uploaded details which we have taken from the equipment displayed parameters. This is system generated data, signature is not required.</td>
     </tr>
-    <tr style="padding-bottom:0px;">
-    <td colspan="6" style="border:0px"> This is system generated data Save the paper and Save the Trees.</td>
+    <tr>
+    <td colspan="4"></td>
+  <td colspan="2" style="padding-left:60px">-Save the paper and Save the Trees.</td>
       </tr>
     </tbody>
   </table>
@@ -393,13 +396,13 @@ $mail->Username = "info@vgcs.in";
 $mail->Password = "Admin@123";
 
 $mail->From = "info@vgcs.in";
-$mail->FromName = "User";
+$mail->FromName = "VGCS SERVICE DETAILS";
 //Set email to and cc
 $mail->AddAddress($row['contact_email']);
 $sql1 = "SELECT * FROM site_settings WHERE id='1'";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
-$mail->AddCC($row1['email'], 'Person One');
+$mail->AddCC($row1['email'], 'Venu Gopal');
 //$mail->AddReplyTo("mail@mail.com");
 
 $mail->IsHTML(true);
