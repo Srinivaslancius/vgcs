@@ -105,13 +105,13 @@ color:#15317E;
 		<img src="vgcs1.png"></th>
 		
         <th colspan="3" style="padding-left:40px"><div class="form-group">
-						  <label for="sel1"></label>
+		  <label for="sel1"></label>
 
-						  <select class="form-control colr" id="sel1" style="font-size:15px" name="company_name">
-							<option>VENUS GENIE CARE SERVICES</option>
-							<option>MEDHA ELECTRICAL CONTRACT</option>
-						  </select>
-						</div></th>
+		  <select class="form-control colr" id="sel1" style="font-size:15px" name="company_name">
+			<option>VENUS GENIE CARE SERVICES</option>
+			<option>MEDHA ELECTRICAL CONTRACT</option>
+		  </select>
+		</div></th>
 						
         <th style="padding-top:20px; padding-left:110px"colspan="2">Mobile:+91-<?php echo $getSiteSettingsData['mobile'];?><br>Mail:<?php echo $getSiteSettingsData['email'];?></th>		
       </tr>
