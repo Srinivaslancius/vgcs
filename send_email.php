@@ -394,8 +394,12 @@ $mail->Password = "Admin@123";
 
 $mail->From = "info@vgcs.in";
 $mail->FromName = "User";
-$mail->AddAddress("srinu7008@gmail.com");
-$mail->AddCC('vardhan.gujjula@gmail.com', 'Person One');
+//Set email to and cc
+$mail->AddAddress($row['contact_email']);
+$sql1 = "SELECT * FROM site_settings WHERE id='1'";
+$result1 = $conn->query($sql1);
+$row1 = $result1->fetch_assoc();
+$mail->AddCC($row1['email'], 'Person One');
 //$mail->AddReplyTo("mail@mail.com");
 
 $mail->IsHTML(true);

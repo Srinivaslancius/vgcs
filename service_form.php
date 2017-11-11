@@ -24,7 +24,10 @@ border:2px solid gray;
 width:970px;
 padding-left:0px;
 margin-bottom:50px;
-height:1005px;
+}
+.table{
+-moz-height:1300px;
+-webkit-height:1200px;
 }
 th, td {
     text-align:left;
@@ -98,7 +101,7 @@ color:#15317E;
 		
         <th colspan="3" style="padding-left:40px"><div class="form-group">
 						  <label for="sel1"></label>
-						  <select class="form-control colr" id="sel1" style="font-size:16px" name="company_name">
+						  <select class="form-control colr" id="sel1" style="font-size:13px" name="company_name">
 							<option>VENUS GENIE CARE SERVICES</option>
 							<option>MEDHA ELECTRICAL CONTRACT</option>
 						  </select>
