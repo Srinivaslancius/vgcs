@@ -1,10 +1,13 @@
 <?php
 ob_start();
+error_reporting(1);
 include "manage_webmaster/admin_includes/config.php";
 include "manage_webmaster/admin_includes/common_functions.php"; 
 $getData = getDataFromTables('site_settings',$status=NULL,'id',1,$activeStatus=NULL,$activeTop=NULL);
 $getSiteSettingsData  = $getData->fetch_assoc();
-?>
+$sql = "SELECT * FROM service_form ORDER BY sl_no DESC";
+$result = $conn->query($sql);
+$getServiceData = $result->fetch_assoc(); ?>
 <!DOCTYPE html>
 <html lang="en" style="overflow-x:auto;">
 <head>
@@ -98,7 +101,7 @@ color:#15317E;
 		
         <th colspan="3" style="padding-left:40px"><div class="form-group">
 						  <label for="sel1"></label>
-						  <select class="form-control colr" id="sel1" style="font-size:16px" name="company_name">
+						  <select class="form-control colr" id="sel1" style="font-size:16px" name="company_name" required>
 							<option>VENUS GENIE CARE SERVICES</option>
 							<option>MEDHA ELECTRICAL CONTRACT</option>
 						  </select>
@@ -110,10 +113,18 @@ color:#15317E;
     <tbody>
       <tr>
         <td>REPORT TYPE:</td>
-        <td style="text-align:center">AMC REPORT :<input type="radio" name="report_type" value="AMC REPORT"></td>
-		 <td style="text-align:center" colspan="2">SERVICE REPORT :<input type="radio" name="report_type" value="SERVICE REPORT"></td>
+        <td style="text-align:center">AMC REPORT :<input type="radio" name="report_type" value="AMC REPORT" required></td>
+		<td style="text-align:center" colspan="2">SERVICE REPORT :<input type="radio" name="report_type" value="SERVICE REPORT" required></td>
 		<td style="text-align:center">SL.NO.</td>
-		<td><input type="text" class="form-control" name="sl_no" id="sl_no" required></td>
+		<?php if($result->num_rows > 0) {  
+		$last_id = $getServiceData['sl_no']; 
+		$sl_no = $last_id+1;?>
+		<td><input type="text" readonly class="form-control" name="sl_no" id="sl_no" required value="<?php echo $sl_no; ?>"></td>
+		<?php } 
+		else {  $sl_no = 1; ?>
+			<td><input type="text" readonly class="form-control" name="sl_no" id="sl_no" required value="<?php echo $sl_no; ?>"></td>
+		<?php } ?>
+
       </tr>
 	  <tr>
 	<td>DATE OF INFORMED :</td>
@@ -155,10 +166,10 @@ color:#15317E;
 	  
 	    <tr>
         <td style="border-right:1px solid gray;">VISIT TYPE :</td>
-        <td style="border-right:1px solid gray" colspan="2">Commissioning Visit <input type="radio" name="visiting_type" value="Commissioning Visit"></td>
-        <td style="border-left:1px solid gray; border-right:1px solid gray">Paid Visit <input type="radio" name="visiting_type" value="Paid Visit"></td>
-		<td style="border-left:1px solid gray; border-right:1px solid gray">Breakdown Visit <input type="radio" name="visiting_type" value="Break Down Visit"></td>
-		<td style="border-right:1px solid gray">AMC Visit <input type="radio" name="visiting_type" value="AMC Visit"></td>
+        <td style="border-right:1px solid gray" colspan="2">Commissioning Visit <input type="radio" name="visiting_type" value="Commissioning Visit" required></td>
+        <td style="border-left:1px solid gray; border-right:1px solid gray">Paid Visit <input type="radio" name="visiting_type" value="Paid Visit" required></td>
+		<td style="border-left:1px solid gray; border-right:1px solid gray">Breakdown Visit <input type="radio" name="visiting_type" value="Break Down Visit" required></td>
+		<td style="border-right:1px solid gray">AMC Visit <input type="radio" name="visiting_type" value="AMC Visit" required></td>
 		
       </tr>
 	  <tr colspan="6">
@@ -189,10 +200,10 @@ color:#15317E;
 
       </tr>
 	  <tr>
-        <td colspan="2">AMC VISIT CHECK LIST <input type="radio" name="visit_checklist_type" value="AMC VISIT CHECK LIST"></td>
+        <td colspan="2">AMC VISIT CHECK LIST <input type="radio" name="visit_checklist_type" value="AMC VISIT CHECK LIST" required></td>
 		<td></td>
 		<td></td>
-        <td colspan="2">SERVICE VISIT CHECK LIST <input type="radio" name="visit_checklist_type" value="SERVICE VISIT CHECK LIST"></td>
+        <td colspan="2">SERVICE VISIT CHECK LIST <input type="radio" name="visit_checklist_type" value="SERVICE VISIT CHECK LIST" required></td>
       </tr>
 	   <tr>
         <td style="border-right:1px solid gray">Water Temp<br><small>(10°C-98°C)</small></td>
@@ -304,7 +315,7 @@ $(document).ready(function(){
 	$('.search').click(function(){
 	    var customer_name = $("#customer_name").val();
 	    var dj_id = $("#dj_id").val();
-	    if(customer_name!='' || dj_id!='') {
+	    if(customer_name!='' && dj_id!='') {
 
 	    	$.ajax({
 	          type:"post",
@@ -313,27 +324,30 @@ $(document).ready(function(){
 	          success:function(value){
 	          	if(value == 0) {
 	          		alert("Customer Not Exists!");
+	          		$("#customer_name").val('');
+	          		$("#dj_id").val('');
 	          	} else {
 
 	          		var data = value.split(",");
 		            $('#contact_person_name').val(data[0]);
 		            $('#contact_mobile').val(data[1]);
 		            $('#contact_email').val(data[2]);
-		            $('#sl_no').val(data[3]);
-		            $('#eng_eqp_id').val(data[4]);
-		            $('#alt_model').val(data[5]);
-		            $('#rating_kva').val(data[6]);
-		            $('#pannel_type').val(data[7]);
-		            $('#run_hrs').val(data[8]);
-		            $('#eng_sl_no').val(data[9]);
-		            $('#alt_sl_no').val(data[10]);
+		            $('#eng_eqp_id').val(data[3]);
+		            $('#alt_model').val(data[4]);
+		            $('#rating_kva').val(data[5]);
+		            $('#pannel_type').val(data[6]);
+		            $('#run_hrs').val(data[7]);
+		            $('#eng_sl_no').val(data[8]);
+		            $('#alt_sl_no').val(data[9]);
 	          	}
 	          	
 	          }
 	        });
 
 	    } else {
-	    	alert("Please Enter Customer Name Or DJ Id");
+	    	alert("Please Enter Customer Name AND EQ Id");
+	    	$("#customer_name").val('');
+	        $("#dj_id").val('');
 	    	return false;
 	    }	    
 
