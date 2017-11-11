@@ -1,5 +1,5 @@
 <?php
-error_reporting(1);
+error_reporting(0);
 include "manage_webmaster/admin_includes/config.php";
 $id = $_GET['lid'];
 $sql = "SELECT * FROM service_form WHERE id='$id'";

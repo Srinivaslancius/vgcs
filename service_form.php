@@ -1,15 +1,14 @@
 <?php
 ob_start();
-error_reporting(1);
+error_reporting(0);
 include "manage_webmaster/admin_includes/config.php";
 include "manage_webmaster/admin_includes/common_functions.php"; 
 
 
 	$pwd=$_POST["password"];
-	$sql = "SELECT * FROM site_settings WHERE web_pwd = '$pwd'";
-	$result = $conn->query($sql);
-	$row = $result->fetch_assoc();
-	if($result->num_rows!=0) {
+	$sql1 = "SELECT * FROM site_settings WHERE web_pwd = '$pwd'";
+	$result1 = $conn->query($sql1);	
+	if($result1->num_rows!=0) {
 
 $getData = getDataFromTables('site_settings',$status=NULL,'id',1,$activeStatus=NULL,$activeTop=NULL);
 $getSiteSettingsData  = $getData->fetch_assoc();
@@ -105,7 +104,7 @@ color:#15317E;
 </head>
 <body>
 <div class="container" style="border:1px solid black; padding:0px">
-<form method="post" action="email.php">         
+<form method="post" action="email.php">        
   <table class="table">
     <thead>
       <tr>
@@ -287,7 +286,7 @@ color:#15317E;
         <td colspan="5"><textarea  class="form-control" name="work_carried_out" rows="2" cols="90"></textarea></td>
 		
       </tr>
-	   <tr>0
+	   <tr>
 	   <td>CUSTOMER COMMENTS :</td>
         <td colspan="5"><textarea  class="form-control" name="customer_comments" rows="2" cols="90"></textarea></td>
       </tr>
