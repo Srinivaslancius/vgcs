@@ -16,6 +16,7 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                     <th>Serial No</th>
                     <th>Report Type</th>
                     <th>Visisting Type</th>
+                    <th>Created Date</th>
                     <th>Customer Name</th>
                     <th>Actions</th>
                   </tr>
@@ -27,6 +28,7 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                     <td><?php echo $row['sl_no'];?></td>
                     <td><?php echo $row['report_type'];?></td>
                     <td><?php echo $row['visiting_type'];?></td>
+                    <td><?php echo $row['created_at'];?></td>
                     <td><?php echo $row['customer_name'];?></td>
                     <td><a href="#"><i class="zmdi zmdi-eye zmdi-hc-fw" data-toggle="modal" data-target="#<?php echo $row['id']; ?>" class=""></i></a></td>
                     <?php
@@ -101,6 +103,84 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                     }
                     else {
                         $start_check_abnormal_sounds = 'YES'; 
+                    }
+                    if ($row['water_temp'] == 0) {
+                        $water_temp = NO; 
+                    }
+                    else {
+                        $water_temp = $row['water_temp']; 
+                    }
+                    if ($row['fuel_pressure'] == 0) {
+                        $fuel_pressure = NO; 
+                    }
+                    else {
+                        $fuel_pressure = $row['fuel_pressure']; 
+                    }
+                    if ($row['oil_pressure'] == 0) {
+                        $oil_pressure = NO; 
+                    }
+                    else {
+                        $oil_pressure = $row['oil_pressure']; 
+                    }
+                    if ($row['battery_change'] == 0) {
+                        $battery_change = NO; 
+                    }
+                    else {
+                        $battery_change = $row['battery_change']; 
+                    }
+                    if ($row['speed_freq'] == 0) {
+                        $speed_freq = NO; 
+                    }
+                    else {
+                        $speed_freq = $row['speed_freq']; 
+                    }
+                    if ($row['load_in_kw'] == 0) {
+                        $load_in_kw = NO; 
+                    }
+                    else {
+                        $load_in_kw = $row['load_in_kw']; 
+                    }
+                    if ($row['load_in_amps'] == 0) {
+                        $load_in_amps = NO; 
+                    }
+                    else {
+                        $load_in_amps = $row['load_in_amps']; 
+                    }
+                    if ($row['voltage'] == 0) {
+                        $voltage = NO; 
+                    }
+                    else {
+                        $voltage = $row['voltage']; 
+                    }
+                    if ($row['amc_visit_check_list_comments'] == 0) {
+                        $amc_visit_check_list_comments = NO; 
+                    }
+                    else {
+                        $amc_visit_check_list_comments = $row['amc_visit_check_list_comments']; 
+                    }
+                    if ($row['failure_details'] == 0) {
+                        $failure_details = NO; 
+                    }
+                    else {
+                        $failure_details = $row['failure_details']; 
+                    }
+                    if ($row['cause_of_failure'] == 0) {
+                        $cause_of_failure = NO; 
+                    }
+                    else {
+                        $cause_of_failure = $row['cause_of_failure']; 
+                    }
+                    if ($row['work_carried_out'] == 0) {
+                        $work_carried_out = NO; 
+                    }
+                    else {
+                        $work_carried_out = $row['work_carried_out']; 
+                    }
+                    if ($row['customer_comments'] == 0) {
+                        $customer_comments = NO; 
+                    }
+                    else {
+                        $customer_comments = $row['customer_comments']; 
                     }
                     ?>
                      <!-- Open Modal Box  here -->
@@ -212,67 +292,67 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Water Temp:</div>
-                              <div class="col-sm-6"><?php echo $row['water_temp'];?></div>
+                              <div class="col-sm-6"><?php echo $water_temp;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
-                              <div class="col-sm-4">Fuel Pressure:</div>
-                              <div class="col-sm-6"><?php echo $row['fuel_pressure'];?></div>
+                              <div class="col-sm-4">Oil Temp:</div>
+                              <div class="col-sm-6"><?php echo $fuel_pressure;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Oil Pressure:</div>
-                              <div class="col-sm-6"><?php echo $row['oil_pressure'];?></div>
+                              <div class="col-sm-6"><?php echo $oil_pressure;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Battery chg:</div>
-                              <div class="col-sm-6"><?php echo $row['battery_change'];?></div>
+                              <div class="col-sm-6"><?php echo $battery_change;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Speed/Freq:</div>
-                              <div class="col-sm-6"><?php echo $row['speed_freq'];?></div>
+                              <div class="col-sm-6"><?php echo $speed_freq;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Load in kw:</div>
-                              <div class="col-sm-6"><?php echo $row['load_in_kw'];?></div>
+                              <div class="col-sm-6"><?php echo $load_in_kw;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Load in AMPS:</div>
-                              <div class="col-sm-6"><?php echo $row['load_in_amps'];?></div>
+                              <div class="col-sm-6"><?php echo $load_in_amps;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">Voltage:</div>
-                              <div class="col-sm-6"><?php echo $row['voltage'];?></div>
+                              <div class="col-sm-6"><?php echo $voltage;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">AMC VISIT CHECK LIST Comments:</div>
-                              <div class="col-sm-6"><?php echo $row['amc_visit_check_list_comments'];?></div>
+                              <div class="col-sm-6"><?php echo $amc_visit_check_list_comments;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">FAILURE DETAILS:</div>
-                              <div class="col-sm-6"><?php echo $row['failure_details'];?></div>
+                              <div class="col-sm-6"><?php echo $failure_details;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">CAUSE OF FAILURE:</div>
-                              <div class="col-sm-6"><?php echo $row['cause_of_failure'];?></div>
+                              <div class="col-sm-6"><?php echo $cause_of_failure;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">WORK CARRIED OUT:</div>
-                              <div class="col-sm-6"><?php echo $row['work_carried_out'];?></div>
+                              <div class="col-sm-6"><?php echo $work_carried_out;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
                               <div class="col-sm-4">CUSTOMER COMMENTS:</div>
-                              <div class="col-sm-6"><?php echo $row['customer_comments'];?></div>
+                              <div class="col-sm-6"><?php echo $customer_comments;?></div>
                             </div>
                             <div class="row">
                               <div class="col-sm-2"></div>
