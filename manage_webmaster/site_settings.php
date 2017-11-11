@@ -89,18 +89,18 @@
                     <div class="help-block with-errors"></div>
                   </div>         
 
-                  <!-- <div class="form-group">
+                  <div class="form-group">
                     <img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettingsData['logo'] ?>" accept="image/*" height="100" width="100" id="output"/>
-                  </div> -->      
+                  </div>      
 
 
-                  <!-- <div class="form-group">
-                    <label for="form-control-4" class="control-label">Banner</label>
+                  <div class="form-group">
+                    <label for="form-control-4" class="control-label">Logo</label>
                     <label class="btn btn-default file-upload-btn">
                         Choose file...
                         <input name="logo" id="form-control-22" class="file-upload-input" type="file" multiple="multiple" onchange="loadFile(event)" accept="image/*">
                       </label>
-                  </div> -->
+                  </div>
 
                   <div class="form-group">
                     <label for="form-control-2" class="control-label">Footer Text</label>

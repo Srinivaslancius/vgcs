@@ -1,3 +1,10 @@
+<?php 
+error_reporting(1);
+include_once('manage_webmaster/admin_includes/config.php');
+include_once('manage_webmaster/admin_includes/common_functions.php');
+$getData = getDataFromTables('site_settings',$status=NULL,'id',1,$activeStatus=NULL,$activeTop=NULL);
+$getSiteSettingsData  = $getData->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +71,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-4">
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4">
-				<center><img src="logo.png" class="logo-responsive"></center>
+				<center><a href="index.php"><img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettingsData['logo'] ?>" class="logo-responsive"></a></center>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4">
 					
