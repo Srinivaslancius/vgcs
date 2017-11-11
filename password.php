@@ -1,3 +1,7 @@
+<?php 
+include_once('manage_webmaster/admin_includes/config.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,16 +76,18 @@
 			</div>
 		</div>
 		<div class="container content">
-			<h3><b>VENUS GENIE CARE SERVICES</b></h3>
-						<h3>& </h3>
-			<h3 style="margin-bottom:100px"><b>MEDHA ELECTRICAL CONTRACT</b></h3>
-			<center><a href="password.php" class="btn btn-primary btn-lg">Service Form</a>
-			
-			<a target="_blank" href="manage_webmaster/index.php" class="btn btn-primary btn-lg">Admin Panel</a></center>
+			<form autocomplete="off" method="post" action="service_form.php" >
+              <div class="form-group">
+                <h3>Password</h3>
+                <center><input type="password" class="form-control" id="form-control-2" placeholder="Password" data-error="Please enter password." required name="password" style="width:30%"></center>
+                <div class="help-block with-errors"></div>
+              </div>             
+              <center><button type="submit" class="btn btn-info btn-block" style="width:30%">Submit</button></center>
+            </form>
 			
 		</div>
 		<div class="container footer">
-			<center><p>©2015-2017 vgcs. designed by <a href="https://lanciussolutions.com/">Lancius IT Solutions</a></p></center>
+			<center><p>©2015-2017 vgcs. desined by <a href="https://lanciussolutions.com/">Lancius IT Solutions</a></p></center>
 		</div>
 	</div>
 	</body>

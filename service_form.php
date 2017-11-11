@@ -3,6 +3,14 @@ ob_start();
 error_reporting(1);
 include "manage_webmaster/admin_includes/config.php";
 include "manage_webmaster/admin_includes/common_functions.php"; 
+
+
+	$pwd=$_POST["password"];
+	$sql = "SELECT * FROM site_settings WHERE web_pwd = '$pwd'";
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
+	if($result->num_rows!=0) {
+
 $getData = getDataFromTables('site_settings',$status=NULL,'id',1,$activeStatus=NULL,$activeTop=NULL);
 $getSiteSettingsData  = $getData->fetch_assoc();
 
@@ -279,7 +287,7 @@ color:#15317E;
         <td colspan="5"><textarea  class="form-control" name="work_carried_out" rows="2" cols="90"></textarea></td>
 		
       </tr>
-	   <tr>
+	   <tr>0
 	   <td>CUSTOMER COMMENTS :</td>
         <td colspan="5"><textarea  class="form-control" name="customer_comments" rows="2" cols="90"></textarea></td>
       </tr>
@@ -300,6 +308,7 @@ color:#15317E;
   </table>
 </form>
 </div>
+<?php } else { echo "<script type='text/javascript'>alert('Please Enter COrrect Password');window.location='password.php'</script>"; }  ?>
 <script>
 	$( function() {
 	   	$( "#datepicker1, #datepicker2" ).datepicker();
