@@ -27,7 +27,10 @@ border:2px solid gray;
 width:970px;
 padding-left:0px;
 margin-bottom:50px;
-height:1005px;
+}
+.table{
+-moz-height:1300px;
+-webkit-height:1200px;
 }
 th, td {
     text-align:left;

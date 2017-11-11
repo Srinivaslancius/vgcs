@@ -6,9 +6,6 @@ $sql = "SELECT * FROM service_form WHERE id='$id'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
-$mailto = $row['contact_email'];
-$mailfrom = "venugopal.7@hotmail.com";
-$mailsubject = "VGCS Service Details";
 /* break description content every after 100 character. */
 
 
@@ -113,6 +110,9 @@ else {
 
 require("mailtest.php/class.phpmailer.php");
 
+
+$content .='<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">';
+$content .='<link rel="stylesheet" href="/resources/demos/style.css">';
 $content .= '
      <style>
   .container{
@@ -371,7 +371,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
 
 require_once('html2pdf/html2pdf.class.php');
 
-//below code for html 2 pdf conversion
+
 $html2pdf = new HTML2PDF('P', 'A3', 'fr');
 $html2pdf->setDefaultFont('Arial');
 $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
@@ -379,9 +379,8 @@ $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
 $html2pdf = new HTML2PDF('P', 'A3', 'fr');
 $html2pdf->WriteHTML($content);
 $html2pdf->Output('generate_reports/'.$id.'.pdf', 'F');
-//end here
 
-//start Email atatchemnt with smtp code
+//Email atatchemnt
 $path = "generate_reports/".$id.".pdf";
 $mail = new PHPMailer();
 
@@ -395,9 +394,14 @@ $mail->Password = "Admin@123";
 
 $mail->From = "info@vgcs.in";
 $mail->FromName = "User";
-$mail->AddAddress("srinu7008@gmail.com");
-$mail->AddCC('vardhan.gujjula@gmail.com', 'Person One');
+//Set email to and cc
+$mail->AddAddress($row['contact_email']);
+$sql1 = "SELECT * FROM site_settings WHERE id='1'";
+$result1 = $conn->query($sql1);
+$row1 = $result1->fetch_assoc();
+$mail->AddCC($row1['email'], 'Person One');
 //$mail->AddReplyTo("mail@mail.com");
+
 $mail->IsHTML(true);
 $mail->Subject = "VGCS SERVICE DETAILS";
 $mail->Body ="<p>Dear ". $row['customer_name'] . ", <br /><br />Please see the VGCS Service Details attachment.</p><br /><br />Thank You<br/>VGCS. ";
