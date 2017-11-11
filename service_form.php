@@ -5,6 +5,7 @@ include "manage_webmaster/admin_includes/config.php";
 include "manage_webmaster/admin_includes/common_functions.php"; 
 $getData = getDataFromTables('site_settings',$status=NULL,'id',1,$activeStatus=NULL,$activeTop=NULL);
 $getSiteSettingsData  = $getData->fetch_assoc();
+
 $sql = "SELECT * FROM service_form ORDER BY sl_no DESC";
 $result = $conn->query($sql);
 $getServiceData = $result->fetch_assoc(); ?>
@@ -22,15 +23,15 @@ $getServiceData = $result->fetch_assoc(); ?>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <style>
-  .container{
+.container{
 border:2px solid gray;
 width:970px;
 padding-left:0px;
 margin-bottom:50px;
 }
 .table{
--moz-height:1300px;
--webkit-height:1200px;
+-moz-height:1280px !important;
+-webkit-height:1200px !important;
 }
 th, td {
     text-align:left;
@@ -42,7 +43,7 @@ th, td {
 	}	
 	th{
 	text-align:center;
-	font-size:15px;
+	font-size:13px;
 	}
 	
 .form-control{
@@ -91,6 +92,7 @@ color:#15317E;
  font-weight:700 !important;
  height: 35px;
 }
+
   </style>
 </head>
 <body>
@@ -104,7 +106,8 @@ color:#15317E;
 		
         <th colspan="3" style="padding-left:40px"><div class="form-group">
 						  <label for="sel1"></label>
-						  <select class="form-control colr" id="sel1" style="font-size:16px" name="company_name" required>
+
+						  <select class="form-control colr" id="sel1" style="font-size:15px" name="company_name">
 							<option>VENUS GENIE CARE SERVICES</option>
 							<option>MEDHA ELECTRICAL CONTRACT</option>
 						  </select>
@@ -132,13 +135,9 @@ color:#15317E;
 	  <tr>
 	<td>DATE OF INFORMED :</td>
         <td><input class="form-control" placeholder="mm/dd/yyyy" id="datepicker1" name="customer_date" required></td>
-		<td></td>
-		
-		<td style="text-align:center">DATE OF VISIT :</td>
+		<td></td>	
+		<td colspan="2" style="padding-left:150px">DATE OF VISIT :</td>
 		<td><input class="form-control"placeholder="mm/dd/yyyy" name="date_of_informed" id="datepicker2" required></td>
-		<td></td>
-		
-		
       </tr>
        <tr>
         <td>Customer Name :</td>
@@ -189,7 +188,7 @@ color:#15317E;
 		<td style="border-right:1px solid gray;border-left:1px solid gray"><input type="text" class="form-control" name="eng_sl_no" id="eng_sl_no"></td>
         <td style="border-right:1px solid gray">ALT./SI.No :</td>
 		<td style="border-right:1px solid gray"><input type="text" class="form-control" name="alt_sl_no" id="alt_sl_no"></td>
-        <td>PANNEL/TYPE :</td>
+        <td>PANNEL/TYPE:</td>
 		<td style="border-left:1px solid gray;"><input type="text" class="form-control" name="pannel_type" id="pannel_type" required></td>
       </tr>
 	   <tr>
@@ -210,88 +209,89 @@ color:#15317E;
       </tr>
 	   <tr>
         <td style="border-right:1px solid gray">Water Temp<br><small>(10°C-98°C)</small></td>
-		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="water_temp" style="width:70px"></td>
+		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="water_temp"></td>
 		<td style="border-right:1px solid gray">Oil Temp</td>
-		<td style="border-right:1px solid gray"><input type="text" class="form-control" name="fuel_pressure" style="width:70px"></td>
+		<td style="border-right:1px solid gray"><input type="text" class="form-control" name="fuel_pressure"></td>
         <td style="border-right:1px solid gray">Oil Pressure<br><small>(1.5kg-7kg)</small></td>
-		<td style="border-right:1px solid gray"><input type="text" class="form-control" name="oil_pressure" style="width:70px"></td>
+		<td style="border-right:1px solid gray;padding-right:50px"><input type="text" class="form-control" name="oil_pressure"></td>
       </tr>
 	   <tr>
         <td style="border-right:1px solid gray">Speed/Freq</td>
-		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="speed_freq" style="width:70px"></td>
+		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="speed_freq"></td>
 		<td style="border-right:1px solid gray">Load in kw</td>
-		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="load_in_kw" style="width:70px"></td>
+		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="load_in_kw"></td>
         <td style="border-right:1px solid gray">Load in AMPS</td>
-		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="load_in_amps" style="width:70px"></td>       
+		 <td style="border-right:1px solid gray;padding-right:50px"><input type="text" class="form-control" name="load_in_amps"></td>       
       </tr>
 	  
 	  <tr>
 	  <td style="border-right:1px solid gray">Battery chg</td>
-		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="battery_change" style="width:70px"></td>
+		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="battery_change"></td>
 		<td></td>
 		 <td style="border-right:1px solid gray"></td>
         <td style="border-right:1px solid gray">Voltage</td>
-		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="voltage" style="width:70px"></td>      
+		 <td style="border-right:1px solid gray;padding-right:50px"><input type="text" class="form-control" name="voltage"></td>      
       </tr>
 	  
 	  <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Oil level / Condition <input type="checkbox" name="check_oil_level_condition" value="<?php if($_POST['check_oil_level_condition'] == "checked") { echo 1; } else { echo 0; } ?>" ></td>
+        <td style="border-right:1px solid gray">Check Oil level / Condition <input type="checkbox" name="check_oil_level_condition" value="<?php if($_POST['check_oil_level_condition'] == "checked") { echo 1; } else { echo 0; } ?>" ></td>
 	
-        <td style="border-right:1px solid gray;"colspan="2">Check Radiator all Houses/Condition<input type="checkbox" name="check_radiator_condition" value="<?php if($_POST['check_radiator_condition'] = "checked") { echo 1; } else { echo 0; } ?>"></td>
+        <td style="border-right:1px solid gray;;padding-left:40px"colspan="3">Check Radiator all Houses / Condition <input type="checkbox" name="check_radiator_condition" value="<?php if($_POST['check_radiator_condition'] = "checked") { echo 1; } else { echo 0; } ?>"></td>
 		
         <td colspan="2">Check Breather / Clean <input type="checkbox" name="check_breather_clean" value="<?php if($_POST['check_breather_clean'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
 		
       </tr>
 	   <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Fuel / Condition <input type="checkbox" name="check_fuel_condition" value="<?php if($_POST['check_fuel_condition'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
+        <td style="border-right:1px solid gray">Check Fuel / Condition <input type="checkbox" name="check_fuel_condition" value="<?php if($_POST['check_fuel_condition'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
 		
-        <td style="border-right:1px solid gray" colspan="2">Check Drive Belts / Condition <input type="checkbox" name="check_drive_belts_condition" value="<?php if($_POST['check_drive_belts_condition'] = "checked") {echo 1;} else { echo 0;} ?>" ></td>
+        <td style="border-right:1px solid gray;padding-left:40px" colspan="3">Check Drive Belts / Condition <input type="checkbox" name="check_drive_belts_condition" value="<?php if($_POST['check_drive_belts_condition'] = "checked") {echo 1;} else { echo 0;} ?>" ></td>
 		
         <td colspan="2">Check Air Filters / Clean <input type="checkbox" name="check_air_filters_clean" value="<?php if($_POST['check_air_filters_clean'] = "checked") {echo 1;} else { echo 0;} ?>" ></td>
 		
       </tr>
 	   <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Coolent / Condition <input type="checkbox" name="check_coolent_condition" value="<?php if($_POST['check_coolent_condition'] = "checked") {echo 1;} else { echo 0;} ?>" ></td>		
-        <td style="border-right:1px solid gray" colspan="2">Check if any / Leakages <input type="checkbox" name="check_leakages" value="<?php if($_POST['check_leakages'] = "checked") {echo 1;} else { echo 0;} ?>"></td>	
+        <td style="border-right:1px solid gray">Check Coolent / Condition <input type="checkbox" name="check_coolent_condition" value="<?php if($_POST['check_coolent_condition'] = "checked") {echo 1;} else { echo 0;} ?>" ></td>		
+        <td style="border-right:1px solid gray;padding-left:40px" colspan="3">Check if any / Leakages <input type="checkbox" name="check_leakages" value="<?php if($_POST['check_leakages'] = "checked") {echo 1;} else { echo 0;} ?>"></td>	
         <td colspan="2">Check Valve Injector / Adjust <input type="checkbox" name="check_valve_injector"  value="<?php if($_POST['check_valve_injector'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
       </tr>
 	   <tr>
-        <td style="border-right:1px solid gray" colspan="2">Check Battery / Condition <input type="checkbox" name="check_battery_condition" value="<?php if($_POST['check_battery_condition'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
+        <td style="border-right:1px solid gray">Check Battery / Condition <input type="checkbox" name="check_battery_condition" value="<?php if($_POST['check_battery_condition'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
 		
-        <td style="border-right:1px solid gray" colspan="2">Start Check Exhaust Smoke/Limits <input type="checkbox" name="start_check_exhaust_smoke" value="<?php if($_POST['start_check_exhaust_smoke'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
+        <td style="border-right:1px solid gray;padding-left:40px" colspan="3">Start Check Exhaust Smoke / Limits <input type="checkbox" name="start_check_exhaust_smoke" value="<?php if($_POST['start_check_exhaust_smoke'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
 	
-        <td colspan="2">Start Check Abnormal Sounds/Observe <input type="checkbox" name="start_check_abnormal_sounds" value="<?php if($_POST['start_check_abnormal_sounds'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
+        <td colspan="2">Start Check Abnormal Sounds / Observe <input type="checkbox" name="start_check_abnormal_sounds" value="<?php if($_POST['start_check_abnormal_sounds'] = "checked") {echo 1;} else { echo 0;} ?>"></td>
 		
       </tr>
 	  <tr>
 	  <td>AMC VISIT CHECK LIST Comments if any :</td>
-        <td colspan="5"><input type="text" class="form-control" name="amc_visit_check_list_comments"></td>		
+        <td colspan="5"><textarea class="form-control" name="amc_visit_check_list_comments" rows="2" cols="90"></textarea></td>		
       </tr>
 	  <tr >
 	   <td>FAILURE DETAILS :</td>
-        <td colspan="5" ><input type="text" class="form-control" name="failure_details"></td>
+        <td colspan="5" ><textarea class="form-control" name="failure_details" rows="2" cols="90"></textarea></td>
       </tr>
 	   <tr>
 	   <td>CAUSE OF FAILURE :</td>
-        <td colspan="5"><input type="text" class="form-control" name="cause_of_failure"></td>
+        <td colspan="5"><textarea  class="form-control" name="cause_of_failure" rows="2" cols="90"></textarea></td>
       </tr>
 	   <tr>
 	    <td>WORK CARRIED OUT :</td>
-        <td colspan="5"><input type="text" class="form-control" name="work_carried_out"></td>
+        <td colspan="5"><textarea  class="form-control" name="work_carried_out" rows="2" cols="90"></textarea></td>
 		
       </tr>
 	   <tr>
 	   <td>CUSTOMER COMMENTS :</td>
-        <td colspan="5"><input type="text" class="form-control" name="customer_comments"></td>
+        <td colspan="5"><textarea  class="form-control" name="customer_comments" rows="2" cols="90"></textarea></td>
       </tr>
 	
 	  <tr>
-	  <td colspan="6">Note: Above uploaded details which we have taken from the equipment displayed parameters.</td>
+	  <td colspan="6" style="border-bottom:0px">Note: Above uploaded details which we have taken from the equipment displayed parameters. This is system generated data signature is not required.</td>
 	  </tr>
 	  <tr>
-	  <td colspan="6">This is system generated data Save the paper and Save the Trees</td>
+  <td colspan="4"></td>
+  <td colspan="2" style="padding-left:60px">-Save the paper and Save the Trees.</td>
 	  </tr>
-	    <tr style="padding-bottom:0px;">
+	    <tr>
 	  <td colspan="2" style="border:0px"></td>
 	  <td colspan="2" style="border:0px"><center><button type="submit" name="submit" class="btn btn-primary active">Submit</button></center></td>
 	<td colspan="2" style="border:0px"></td>
@@ -348,7 +348,7 @@ $(document).ready(function(){
 	        });
 
 	    } else {
-	    	alert("Please Enter Customer Name AND EQ Id");
+	    	alert("Please Enter Customer Name AND EQ Id");	    	
 	    	//$("#customer_name").val('');
 	        //$("#dj_id").val('');
 	    	return false;
