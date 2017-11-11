@@ -308,7 +308,7 @@ color:#15317E;
   </table>
 </form>
 </div>
-<?php } else { echo "<script type='text/javascript'>alert('Please Enter COrrect Password');window.location='password.php'</script>"; }  ?>
+<?php } else { echo "<script type='text/javascript'>alert('Please Enter Valid Password');window.location='password.php'</script>"; }  ?>
 <script>
 	$( function() {
 	   	$( "#datepicker1, #datepicker2" ).datepicker();
