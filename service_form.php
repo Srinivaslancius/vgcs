@@ -349,8 +349,8 @@ $(document).ready(function(){
 
 	    } else {
 	    	alert("Please Enter Customer Name AND EQ Id");
-	    	$("#customer_name").val('');
-	        $("#dj_id").val('');
+	    	//$("#customer_name").val('');
+	        //$("#dj_id").val('');
 	    	return false;
 	    }	    
 
