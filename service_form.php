@@ -102,7 +102,7 @@ color:#15317E;
     <thead>
       <tr>
         <th>
-		<img src="vgcs1.png"></th>
+		<a href="index.php"><img src="vgcs1.png"><a/></th>
 		
         <th colspan="3" style="padding-left:40px"><div class="form-group">
 		  <label for="sel1"></label>
