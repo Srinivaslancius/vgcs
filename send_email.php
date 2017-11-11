@@ -111,8 +111,9 @@ else {
     $visit_checklist_type = 'SERVICE VISIT CHECK LIST ';    
 }
 
-$content .='<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">';
- $content .= '
+require("mailtest.php/class.phpmailer.php");
+
+$content .= '
      <style>
   .container{
 border:2px solid gray;
@@ -370,60 +371,47 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
 
 require_once('html2pdf/html2pdf.class.php');
 
-
+//below code for html 2 pdf conversion
 $html2pdf = new HTML2PDF('P', 'A3', 'fr');
-
 $html2pdf->setDefaultFont('Arial');
 $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
 
 $html2pdf = new HTML2PDF('P', 'A3', 'fr');
 $html2pdf->WriteHTML($content);
+$html2pdf->Output('generate_reports/'.$id.'.pdf', 'F');
+//end here
 
+//start Email atatchemnt with smtp code
+$path = "generate_reports/".$id.".pdf";
+$mail = new PHPMailer();
 
-$to = $mailto;
-$from = $mailfrom;
-$subject = $mailsubject;
+$mail->IsSMTP();
+$mail->Host = "vgcs.in";
+$mail->SMTPAuth = true;
+//$mail->SMTPSecure = "ssl";
+$mail->Port = 587;
+$mail->Username = "info@vgcs.in";
+$mail->Password = "Admin@123";
 
-$message = "<p>Dear ". $row['customer_name'] . ", <br /><br />Please see the VGCS Service Details attachment.</p><br /><br />Thank You<br/>VGCS.";
-$separator = md5(time());
-$eol = PHP_EOL;
-$filename = "pdf-document.pdf";
-$pdfdoc = $html2pdf->Output('', 'S');
-$attachment = chunk_split(base64_encode($pdfdoc));
+$mail->From = "info@vgcs.in";
+$mail->FromName = "User";
+$mail->AddAddress("srinu7008@gmail.com");
+$mail->AddCC('vardhan.gujjula@gmail.com', 'Person One');
+//$mail->AddReplyTo("mail@mail.com");
+$mail->IsHTML(true);
+$mail->Subject = "VGCS SERVICE DETAILS";
+$mail->Body ="<p>Dear ". $row['customer_name'] . ", <br /><br />Please see the VGCS Service Details attachment.</p><br /><br />Thank You<br/>VGCS. ";
+$mail->AddAttachment($path, '', $encoding = 'base64', $type = 'application/pdf'); 
+$mail->CharSet="windows-1251";
+$mail->CharSet="utf-8";
 
-
-
-
-$headers = "From: " . $from . $eol;
-$headers .= "Cc: venugopal.7@hotmail.com" . $eol;
-$headers .= "MIME-Version: 1.0" . $eol;
-$headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . $eol . $eol;
-
-$body = '';
-
-$body .= "Content-Transfer-Encoding: 7bit" . $eol;
-$body .= "This is a MIME encoded message." . $eol; //had one more .$eol
-
-
-$body .= "--" . $separator . $eol;
-$body .= "Content-Type: text/html; charset=\"iso-8859-1\"" . $eol;
-$body .= "Content-Transfer-Encoding: 8bit" . $eol . $eol;
-$body .= $message . $eol;
-
-
-$body .= "--" . $separator . $eol;
-$body .= "Content-Type: application/octet-stream; name=\"" . $filename . "\"" . $eol;
-$body .= "Content-Transfer-Encoding: base64" . $eol;
-$body .= "Content-Disposition: attachment" . $eol . $eol;
-$body .= $attachment . $eol;
-$body .= "--" . $separator . "--";
-
-if (mail($to, $subject, $body, $headers)) {
-
-    header("Location: thank_you.php?id=".$id."");
-    echo $msgsuccess = 'Mail Send Successfully'; die;
-} else {
-
-    $msgerror = 'Main not send';
+if(!$mail->Send())
+{
+echo "Message could not be sent. <p>";
+echo "Mailer Error: " . $mail->ErrorInfo;
+exit;
 }
+
+echo "Message has been sent";
+header("Location: thank_you.php?id=".$id."");
 ?>
