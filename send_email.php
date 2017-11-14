@@ -241,8 +241,8 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
     <td style="border-right:1px solid gray;color:black">' . $row['run_hrs'] . '</td>
     <td></td>
      <td></td>
-     <td></td>
-     <td></td>
+     <td style="border-left:1px solid gray;">TOTAL/HRS :</td>
+     <td style="border-left:1px solid gray;color:black">' . $row['total_hours'] . '</td>
     
 
       </tr>
