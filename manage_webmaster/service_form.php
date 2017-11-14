@@ -30,7 +30,7 @@ $getAdminUsersData = $conn->query($sql); $i=1; ?>
                     <td><?php echo $row['visiting_type'];?></td>
                     <td><?php echo $row['created_at'];?></td>
                     <td><?php echo $row['customer_name'];?></td>
-                    <td><a href="#"><i class="zmdi zmdi-eye zmdi-hc-fw" data-toggle="modal" data-target="#<?php echo $row['id']; ?>" class=""></i></a></td>
+                    <td><a href="#"><i class="zmdi zmdi-eye zmdi-hc-fw" data-toggle="modal" data-target="#<?php echo $row['id']; ?>" class=""></i></a>&nbsp;&nbsp;<a href="../generate_reports/<?php echo $row['id']; ?>" target="_blank"><i class="zmdi zmdi-local-printshop"></i></a></td>
                     <?php
                     if ($row['check_oil_level_condition'] == 0) {
                         $check_oil_level_condition = NO; 
