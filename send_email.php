@@ -115,30 +115,27 @@ $content .='<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstr
 $content .='<link rel="stylesheet" href="/resources/demos/style.css">';
 $content .= '
      <style>
-  .container{
+.container{
 border:2px solid gray;
-width:970px;
-padding-left:0px;
+width:960px;
+margin-top:70px;
 margin-bottom:50px;
 }
 .table{
 -moz-height:1280px !important;
 -webkit-height:1200px !important;
-margin-right:30px;
 }
 th, td {
     text-align:left;
-  font-size:15px;
-  padding-right:0px;
+  font-size:15px;  
   font-weight:600;
+  padding:6px;
   border-bottom:1px solid gray;
   color:#15317E;
-  padding:10px;
   } 
   th{
   text-align:center;
-  font-size:15px;
-  padding:10px;
+  font-size:13px;
   }
   
 .form-control{
@@ -200,7 +197,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
     
         <th colspan="3" style="font-size:20px; font-weight:bold; padding-top:30px;">' . $row['company_name'] . '</th>
             
-        <th style="padding-top:20px; padding-left:80px"colspan="2">Mobile:+91-9849257587<br>Mail:venugopal.7@hotmail.com</th>    
+        <th style="padding-top:20px"colspan="2">Mobile:+91-9849257587<br>Mail:venugopal.7@hotmail.com</th>    
       </tr>
     </thead>
     <tbody>
@@ -310,52 +307,52 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
     <tr>
         <td style="border-right:1px solid gray" >Check Oil level / Condition :<span style="color:black">' . $check_oil_level_condition . '</span></td>
   
-        <td style="border-right:1px solid gray;"colspan="3">Check Radiator all Houses/Condition :<span style="color:black">' . $check_radiator_condition . '</span></td>
+        <td style="border-right:1px solid gray;"colspan="2">Check Radiator all Houses/Condition :<span style="color:black">' . $check_radiator_condition . '</span></td>
     
-        <td colspan="2">Check Breather / Clean :<span style="color:black">' . $check_breather_clean . '</span></td>
+        <td colspan="3">Check Breather / Clean :<span style="color:black">' . $check_breather_clean . '</span></td>
     
       </tr>
      <tr>
         <td style="border-right:1px solid gray" >Check Fuel / Condition :<span style="color:black">' . $check_fuel_condition. '</span></td>
     
-        <td style="border-right:1px solid gray" colspan="3">Check Drive Belts / Condition :<span style="color:black">' . $check_drive_belts_condition . '</span></td>
+        <td style="border-right:1px solid gray" colspan="2">Check Drive Belts / Condition :<span style="color:black">' . $check_drive_belts_condition . '</span></td>
     
-        <td colspan="2">Check Air Filters / Clean :<span style="color:black">' . $check_air_filters_clean . '</span></td>
+        <td colspan="3">Check Air Filters / Clean :<span style="color:black">' . $check_air_filters_clean . '</span></td>
     
       </tr>
      <tr>
         <td style="border-right:1px solid gray" >Check Coolent / Condition :<span style="color:black">' . $check_coolent_condition . '</span></td>    
-        <td style="border-right:1px solid gray" colspan="3">Check if any / Leakages :<span style="color:black">' . $check_leakages. '</span></td>  
-        <td colspan="2">Check Valve Injector / Adjust :<span style="color:black">' . $check_valve_injector . '</span></td>
+        <td style="border-right:1px solid gray" colspan="2">Check if any / Leakages :<span style="color:black">' . $check_leakages. '</span></td>  
+        <td colspan="3">Check Valve Injector / Adjust :<span style="color:black">' . $check_valve_injector . '</span></td>
       </tr>
      <tr>
         <td style="border-right:1px solid gray" >Check Battery / Condition :<span style="color:black">' . $check_battery_condition . '</span></td>
     
-        <td style="border-right:1px solid gray" colspan="3">Start Check Exhaust Smoke/Limits :<span style="color:black">' . $start_check_exhaust_smoke . '</span></td>
+        <td style="border-right:1px solid gray" colspan="2">Start Check Exhaust Smoke/Limits :<span style="color:black">' . $start_check_exhaust_smoke . '</span></td>
   
-        <td colspan="2">Start Check Abnormal Sounds/Observe :<span style="color:black">' . $start_check_abnormal_sounds. '</span></td>
+        <td colspan="3">Start Check Abnormal Sounds/Observe :<span style="color:black">' . $start_check_abnormal_sounds. '</span></td>
     
       </tr>
     <tr>
     <td>AMC VISIT CHECK LIST Comments if any :</td>
-        <td colspan="5" style="color:black">' . wordwrap($row['amc_visit_check_list_comments'],110,"<br>\n") . '</td>    
+        <td colspan="5" style="color:black; text-align:justify">' . wordwrap($row['amc_visit_check_list_comments'],100,"<br>\n") . '</td>    
       </tr>
     <tr >
      <td>FAILURE DETAILS :</td>
-        <td colspan="5" style="color:black">' . wordwrap($row['failure_details'],110,"<br>\n") . '</td>
+        <td colspan="5" style="color:black; text-align:justify">' . wordwrap($row['failure_details'],100,"<br>\n") . '</td>
       </tr>
      <tr>
      <td>CAUSE OF FAILURE :</td>
-        <td colspan="5" style="color:black">' . wordwrap($row['cause_of_failure'],110,"<br>\n") . '</td>
+        <td colspan="5" style="color:black; text-align:justify">' . wordwrap($row['cause_of_failure'],100,"<br>\n") . '</td>
       </tr>
      <tr>
       <td>WORK CARRIED OUT :</td>
-        <td colspan="5" style="color:black">' . wordwrap($row['work_carried_out'],110,"<br>\n") . '</td>
+        <td colspan="5" style="color:black; text-align:justify">' . wordwrap($row['work_carried_out'],100,"<br>\n") . '</td>
     
       </tr>
      <tr>
      <td>CUSTOMER COMMENTS :</td>
-        <td colspan="5" style="color:black">' . wordwrap($row['customer_comments'],110,"<br>\n") . '</td>
+        <td colspan="5" style="color:black; text-align:justify">' . wordwrap($row['customer_comments'],100,"<br>\n") . '</td>
       </tr>
   
     <tr>
@@ -363,7 +360,7 @@ $content .= '<div class="container" style="border:1px solid black; padding:0px">
     </tr>
     <tr>
     <td colspan="4"></td>
-  <td colspan="2" style="padding-left:60px">-Save the paper and Save the Trees.</td>
+  <td colspan="2">-Save the paper and Save the Trees.</td>
       </tr>
     </tbody>
   </table>
