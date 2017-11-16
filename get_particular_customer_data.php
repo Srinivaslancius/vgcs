@@ -18,8 +18,9 @@ $pannel_type = $row['pannel_type'];
 $run_hrs = $row['run_hrs'];
 $eng_sl_no = $row['eng_sl_no'];
 $alt_sl_no = $row['alt_sl_no'];
+$location = $row['location'];
 if($result->num_rows != 0) {
-	echo $contact_person_name.",".$contact_mobile.",".$contact_email.",".$eng_eqp_id.",".$alt_model.",".$rating_kva.",".$pannel_type.",".$run_hrs.",".$eng_sl_no.",".$alt_sl_no;
+	echo $contact_person_name.",".$contact_mobile.",".$contact_email.",".$eng_eqp_id.",".$alt_model.",".$rating_kva.",".$pannel_type.",".$run_hrs.",".$eng_sl_no.",".$alt_sl_no.",".$location;
 } else {
 	echo "0";
 }

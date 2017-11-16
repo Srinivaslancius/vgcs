@@ -169,7 +169,7 @@ color:#15317E;
 		 <td style="text-align:center">E-mail :</td>
 		<td><input type="email" class="form-control" placeholder="E-mail id" id="contact_email" required name="contact_email"></td>
 		<td style="text-align:center">Location :</td>
-		<td><input type="text" class="form-control" name="location"></td>
+		<td><input type="text" class="form-control" name="location" id="location"></td>
       </tr>
 	  
 	    <tr>
@@ -355,6 +355,8 @@ $(document).ready(function(){
 		            $('#run_hrs').val(data[7]);
 		            $('#eng_sl_no').val(data[8]);
 		            $('#alt_sl_no').val(data[9]);
+		            //$('#location').val(data[10] +","+ data[11] +","+ data[12] +","+ data[13]);
+		            $('#location').val(data[10]);
 	          	}
 	          	
 	          }
@@ -369,7 +371,7 @@ $(document).ready(function(){
 
 	}); 
 
-	$("#total_hours").blur(function(){
+	$("#total_hours").change(function(){
 		var total = $("#total_hours").val();
 		var run_hrs = $("#run_hrs").val();			
 	    $("#run_hrs").val(total - run_hrs);
