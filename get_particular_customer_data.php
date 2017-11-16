@@ -19,8 +19,9 @@ $run_hrs = $row['run_hrs'];
 $eng_sl_no = $row['eng_sl_no'];
 $alt_sl_no = $row['alt_sl_no'];
 $location = $row['location'];
+$total_hours = $row['total_hours'];
 if($result->num_rows != 0) {
-	echo $contact_person_name.",".$contact_mobile.",".$contact_email.",".$eng_eqp_id.",".$alt_model.",".$rating_kva.",".$pannel_type.",".$run_hrs.",".$eng_sl_no.",".$alt_sl_no.",".$location;
+	echo $contact_person_name.",".$contact_mobile.",".$contact_email.",".$eng_eqp_id.",".$alt_model.",".$rating_kva.",".$pannel_type.",".$run_hrs.",".$eng_sl_no.",".$alt_sl_no.",".$total_hours.",".$location;
 } else {
 	echo "0";
 }

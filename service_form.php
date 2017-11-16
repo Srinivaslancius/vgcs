@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 $getServiceData = $result->fetch_assoc(); ?>
 <!DOCTYPE html>
 <html lang="en" style="overflow-x:auto;">
-<head><meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <title>VENUS GENIE CARE SERVICES</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -200,12 +200,13 @@ color:#15317E;
       
       </tr>
 	   <tr>
-        <td style="border-right:1px solid gray;">RUN/HRS :</td>
-		<td style="border-right:1px solid gray;"><input type="text" class="form-control" name="run_hrs" id="run_hrs" ></td>
+        <td style="border-right:1px solid gray;">TOTAL/HRS :</td>
+		<td style="border-right:1px solid gray;"><input type="text" class="form-control" name="total_hours" id="total_hours"></td>
 		<td></td>
 		 <td style="border-right:1px solid gray;"></td>
-		 <td style="border-right:1px solid gray;"><center>TOTAL/HRS :</center></td>
-		 <td><input type="text" class="form-control" name="total_hours" id="total_hours"></td>
+		 <td style="border-right:1px solid gray;"><center>USED/HRS :</center></td>
+		 <td><input type="text" class="form-control" name="run_hrs" id="run_hrs" readonly></td>
+		 <input type="hidden" id="check_run_hours">
 		
 
       </tr>
@@ -216,7 +217,7 @@ color:#15317E;
         <td colspan="2" style="font-size:16px"><b>SERVICE VISIT CHECK LIST</b> <input type="radio" name="visit_checklist_type" value="SERVICE VISIT CHECK LIST" required></td>
       </tr>
 	   <tr>
-        <td style="border-right:1px solid gray">Water Temp<small>(10¡ÆC-98¡ÆC)</small></td>
+        <td style="border-right:1px solid gray">Water Temp<small>(10°C-98°C)</small></td>
 		 <td style="border-right:1px solid gray"><input type="text" class="form-control" name="water_temp"></td>
 		<td style="border-right:1px solid gray">Oil Temp</td>
 		<td style="border-right:1px solid gray"><input type="text" class="form-control" name="fuel_pressure"></td>
@@ -355,8 +356,9 @@ $(document).ready(function(){
 		            $('#run_hrs').val(data[7]);
 		            $('#eng_sl_no').val(data[8]);
 		            $('#alt_sl_no').val(data[9]);
-		            //$('#location').val(data[10] +","+ data[11] +","+ data[12] +","+ data[13]);
-		            $('#location').val(data[10]);
+		            $('#check_run_hours').val(data[10]);
+                    $('#location').val(data[11]);
+                    
 	          	}
 	          	
 	          }
@@ -372,9 +374,9 @@ $(document).ready(function(){
 	}); 
 
 	$("#total_hours").change(function(){
-		var total = $("#total_hours").val();
-		var run_hrs = $("#run_hrs").val();			
-	    $("#run_hrs").val(total - run_hrs);
+		var total = $("#total_hours").val();		
+		var check_run_hours = $("#check_run_hours").val();			
+	    $("#run_hrs").val(total - check_run_hours);
 	}); 
 
 });
