@@ -176,8 +176,8 @@ color:#15317E;
         <td style="border-right:1px solid gray;">VISIT TYPE :</td>
         <td style="border-right:1px solid gray" colspan="2"><center>Commissioning Visit <input type="radio" name="visiting_type" value="Commissioning Visit" required></center></td>
         <td style="border-left:1px solid gray;border-right:1px solid gray"><center>Paid Visit <input type="radio" name="visiting_type" value="Paid Visit" required></center></td>
-		<td style="border-right:1px solid gray;"><center>AMC Visit <input type="radio" name="visiting_type" value="Break Down Visit" required></td></center>
-		<td><center>Breakdown Visit <input type="radio" name="visiting_type" value="AMC Visit" required></center></td>
+		<td style="border-right:1px solid gray;"><center>AMC Visit <input type="radio" name="visiting_type" value="AMC Visit" required></td></center>
+		<td><center>Breakdown Visit <input type="radio" name="visiting_type" value="Break Down Visit" required></center></td>
 		
       </tr>
 	  <tr colspan="6">
@@ -346,18 +346,19 @@ $(document).ready(function(){
 	          	} else {
 
 	          		var data = value.split(",");
-		            $('#contact_person_name').val(data[0]);
-		            $('#contact_mobile').val(data[1]);
-		            $('#contact_email').val(data[2]);
-		            $('#eng_eqp_id').val(data[3]);
-		            $('#alt_model').val(data[4]);
-		            $('#rating_kva').val(data[5]);
-		            $('#pannel_type').val(data[6]);
-		            $('#run_hrs').val(data[7]);
-		            $('#eng_sl_no').val(data[8]);
-		            $('#alt_sl_no').val(data[9]);
-		            $('#check_run_hours').val(data[10]);
-                    $('#location').val(data[11]);
+	          		$('#sel1').val(data[0]);
+		            $('#contact_person_name').val(data[1]);
+		            $('#contact_mobile').val(data[2]);
+		            $('#contact_email').val(data[3]);
+		            $('#eng_eqp_id').val(data[4]);
+		            $('#alt_model').val(data[5]);
+		            $('#rating_kva').val(data[6]);
+		            $('#pannel_type').val(data[7]);
+		            $('#run_hrs').val(data[8]);
+		            $('#eng_sl_no').val(data[9]);
+		            $('#alt_sl_no').val(data[10]);
+		            $('#check_run_hours').val(data[11]);
+                    $('#location').val(data[12]);
                     
 	          	}
 	          	
